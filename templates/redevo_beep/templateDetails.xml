@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template">
+	<name>REDEVO_BEEP</name>
+    <version>1.0.0</version>
+	<creationDate>05/11/08</creationDate>
+	<author>Red Evolution</author>
+	<authorEmail>info@redevolution.com</authorEmail>
+	<authorUrl>www.redevolution.com</authorUrl>
+	<copyright></copyright>
+	<license>GNU/GPL</license>
+	<description>REDEVO_BEEP_DESC</description>
+	<files>
+	<folder>images</folder>
+	<folder>css</folder>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>params.ini</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.tpl_redevo_beep.ini</language>
+	</languages>
+	<administration>
+    	<languages folder="admin">
+			<language tag="en-GB">en-GB.tpl_redevo_beep.ini</language>
+		</languages>
+    </administration>
+	<positions>
+		<position>left</position>
+		<position>right</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>user5</position>
+		<position>user6</position>
+		<position>user7</position>
+		<position>logo</position>
+		<position>menu</position>
+		<position>header</position>
+		<position>breadcrumbs</position>
+		<position>footer</position>
+	</positions>
+	<params>
+		<param name="colorVariation" type="list" default="blue" label="COLOUR_THEME" description="COLOUR_THEME_DESC">
+			<option value="blue">BLUE</option>
+			<option value="green">GREEN</option>
+			<option value="navy">NAVY</option>
+			<option value="orange">ORANGE</option>
+			<option value="purple">PURPLE</option>
+			<option value="red">RED</option>	
+		</param>
+	</params>
+</install>

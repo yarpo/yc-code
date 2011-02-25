@@ -1,0 +1,13 @@
+Subject: Powiadomienie o nowym temacie w dziale "{FORUM_NAME}"
+
+Witaj {USERNAME},
+
+Otrzymałeś(aś) ten e-mail, ponieważ obserwujesz dział "{FORUM_NAME}" na forum "{SITENAME}". Przed chwilą ktoś napisał temat "{TOPIC_TITLE}". Możesz użyć tego linku, żeby zobaczyć ten dział. Dopóki tego nie zrobisz, nie otrzymasz żadnego następnego powiadomienia.
+
+{U_FORUM}
+
+Jeśli nie chcesz już obserwować tego działu, to kliknij na link "Przestań obserwować" znajdujący się na górze tego działu lub kliknij na poniższy link:
+
+{U_STOP_WATCHING_FORUM}
+
+{EMAIL_SIG}

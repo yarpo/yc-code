@@ -1,0 +1,156 @@
+div#nav
+{
+	position: relative;
+	border: 1px solid #d4d4d4;
+	display: block;
+	background: #cbcbcb url("../images/menu-bg.png") 0 0 repeat-x scroll;
+	margin: 0 0 10px 0;
+	line-height: 16px;
+}
+
+#nav .moduletable_menu
+{
+	border: 1px solid #fff;
+}
+
+#nav, #nav .moduletable_menu, #nav ul>li, #nav ul>li a
+{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#nav ul 
+{
+	padding: 0;
+	margin: 0 0 0 10px;
+	list-style: none;
+	width: 100%;
+	overflow: hidden;
+}
+
+#nav a
+{
+	display: block;
+	color: #000;
+	text-transform: uppercase;
+	padding: 5px 12px;
+	width: auto;
+}
+
+#nav a:first-letter
+{
+	font-size: 1.1em;
+}
+
+#nav a:hover:first-letter
+{
+	color: #000;
+}
+
+#nav a:hover, #nav a.mainlevel_current-top
+{
+	text-decoration:none;
+}
+
+#nav li
+{
+	float:left;
+	padding:0;
+	margin: 6px 8px 6px 0;
+	background: none;
+	border: 1px solid #ddd;
+}
+
+#nav li:hover
+{
+	border-color #e4e4e4;
+}
+
+#nav li a
+{
+	display: block;
+	background: #e4e4e4 url("../images/menu-item-bg.png") 0 0 repeat-x scroll;
+	color: #888;
+	font: 700 11px Helvetica,sans-serif;
+	text-decoration: none;
+}
+
+#nav li a:hover
+{
+	background: #fefefe;
+	color: #111;
+}
+
+#nav li.active a span
+{
+	color: #000;
+}
+
+/* stopka */
+#footer {
+	width: 1000px;
+	margin: 0 auto;
+	float: none;
+}
+
+#footer .moduletable ul {
+	float: left;
+	text-align: left;
+	margin: 0 60px;
+}
+
+#footer .moduletable li  {
+	list-style: circle;
+	background: none;
+}
+
+#footer .moduletable li.head {
+	font-weight: bold;
+	margin-left: -20px;
+	font-size: 13px;
+	list-style: none;
+}
+
+#footer .moduletable li.head a {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#footer .moduletable ul:hover li.head,
+#footer .moduletable ul:hover li.head a {
+	color: #000;
+}
+
+#footer .moduletable ul#about_us_yc {
+	float: right;
+	margin-right: 40px;
+}
+
+#footer .moduletable ul#about_us_yc ul {
+	margin: 0;
+	border: 1px solid rgb(230, 230, 230);
+	padding-right: 10px;
+
+}
+
+#footer .moduletable ul#about_us_yc:hover ul {
+	border: 1px solid rgb(200, 200, 200);
+	background: rgb(245, 245, 245);
+}
+
+#footer .moduletable ul#about_us_yc li {
+	list-style: none;
+}
+
+#footer .moduletable ul#about_us_yc ul li {
+	float: left;
+}
+
+#footer .moduletable ul#about_us_yc ul li:before {
+	content: '» ';
+}
+
+#footer li a:hover {
+	color: #222;
+}

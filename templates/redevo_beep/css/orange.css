@@ -1,0 +1,16 @@
+a, #left ul.menu a:hover, #left ul#mainlevel a:hover,
+#left ul.menu a#active_menu, #left ul#mainlevel a#active_menu,
+#nav li:hover, #nav li.sfhover, #nav a:hover, 
+#nav a.mainlevel_current-top, #nav li.active a{color:#ff8500;}
+
+ul li, #user2 ul li{
+background:url(../images/arrow-orange.png) 2px 7px no-repeat;}
+#left ul.menu li{
+background:url(../images/bullet-orange.png) 0 5px no-repeat;
+}
+#user2 .moduletable h3{
+background:url(../images/h3bg-orange.png) top right no-repeat;
+}
+#nav li li{
+background:url(../images/bullet-orange.png) 10px 5px no-repeat;
+}

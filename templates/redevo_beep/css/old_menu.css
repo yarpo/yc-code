@@ -1,0 +1,135 @@
+#nav ul {
+	padding: 0;
+	margin: 0 0 0 10px;
+	list-style: none;
+}
+#nav ul ul{margin:0;}
+
+/*style for the mainlevel links*/
+#nav a{
+display:block;
+color:#000;
+text-transform:uppercase;
+padding:6px 20px 5px 0;
+width:auto;
+}
+#nav a:hover, #nav a.mainlevel_current-top{
+text-decoration:none;
+}
+/* mainlevel's li */
+#nav li{
+float:left;
+padding:0;
+margin:0;
+background:none;
+width:auto;
+}
+/*sublevel's ul */
+#nav li ul{
+position:absolute;
+left:-999em;
+width:164px;
+background:#fff; /*background colour of the sublevel panel */
+border-right:#cac9c9 1px solid; /*border of the sublevel panel */
+border-bottom:#cac9c9 1px solid;
+padding:10px 0px 5px 0;
+}
+html>body #nav li ul{width:163px;}
+/*sub sub level's ul */
+#nav li ul ul{
+position:absolute;
+left:-999em;
+margin:0;
+margin-top:-25px;
+margin-left:146px;/* equals to sublevel's menu link's width */
+}
+/*sublevel's li*/
+#nav li li{
+float:none;
+padding:0 10px 0 18px;
+margin:0 0 4px 0;
+line-height:14px;
+}
+
+/*sublevel's menu links */
+#nav li li a{
+padding:0;
+text-transform:none;
+font-weight:normal;
+margin:0;
+}
+
+#nav li:hover ul ul, #nav li.sfhover ul ul {left: -999em;}
+#nav li:hover ul, #nav li.sfhover ul, #nav li li:hover ul, #nav li li.sfhover ul {left: auto;}
+#nav li:hover, #nav li.sfhover {position:static;}
+
+#nav li.active li a{color:#000;}
+
+/* footer */
+#footer {
+	width: 1000px;
+	margin: 0 auto;
+	float: none;
+}
+
+#footer .moduletable ul {
+	float: left;
+	text-align: left;
+	margin: 0 60px;
+}
+
+#footer .moduletable li  {
+	list-style: circle;
+	background: none;
+}
+
+#footer .moduletable li.head {
+	font-weight: bold;
+	margin-left: -20px;
+	font-size: 13px;
+	list-style: none;
+}
+
+#footer .moduletable li.head a {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#footer .moduletable ul:hover li.head,
+#footer .moduletable ul:hover li.head a {
+	color: #000;
+}
+
+#footer .moduletable ul#about_us_yc {
+	float: right;
+	margin-right: 40px;
+}
+
+#footer .moduletable ul#about_us_yc ul {
+	margin: 0;
+	border: 1px solid rgb(230, 230, 230);
+	padding-right: 10px;
+
+}
+
+#footer .moduletable ul#about_us_yc:hover ul {
+	border: 1px solid rgb(200, 200, 200);
+	background: rgb(245, 245, 245);
+}
+
+#footer .moduletable ul#about_us_yc li {
+	list-style: none;
+}
+
+#footer .moduletable ul#about_us_yc ul li {
+	float: left;
+}
+
+#footer .moduletable ul#about_us_yc ul li:before {
+	content: '» ';
+}
+
+
+#footer li a:hover {
+	color: #222;
+}
