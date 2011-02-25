@@ -1,0 +1,10 @@
+Subject: Temat "{TOPIC_TITLE}" został zaakceptowany
+
+Witaj {USERNAME},
+
+Otrzymałeś(aś) ten e-mail, ponieważ Twój temat "{TOPIC_TITLE}", napisany na forum "{SITENAME}", został zaakceptowany przez moderatora lub administratora.
+
+Jeśli chcesz zobaczyć ten temat, kliknij tutaj:
+{U_VIEW_TOPIC}
+
+{EMAIL_SIG}
