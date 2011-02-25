@@ -1,4 +1,4 @@
-/*var clickMenu = function(menu) {
+var clickMenu = function(menu) {
    var getEls = document.getElementsByTagName("LI");
    var getAgn = getEls;
 
@@ -35,7 +35,7 @@ var stuHover = function() {
 		}
 	}
 }
-if (window.attachEvent) window.attachEvent("onload", stuHover);*/
+if (window.attachEvent) window.attachEvent("onload", stuHover);
 
 function popup(url, width, height, name)
 {
