@@ -9,14 +9,14 @@
 <meta name="resource-type" content="document" />
 <meta name="distribution" content="global" />
 <meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-
+<meta name="keywords" content="forum, programowanie, youthcoders.net" />
+<meta name="description" content="Forum serwisu Youthcoders. Tematyka: programowanie, Joomla, multimedia, linux, edukacja pozaformalna" />
 {META}
 <title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
 
 <link rel="stylesheet" href="{T_STYLESHEET_LINK}" type="text/css" />
 <script src="{T_THEME_PATH}/script.js" type="text/javascript"></script>
+<!-- IF S_USER_PM_POPUP or  IF ._file -->
 <script type="text/javascript">
 // <![CDATA[
 <!-- IF S_USER_PM_POPUP -->
@@ -65,8 +65,10 @@
 
 // ]]>
 </script>
+<!-- ENDIF -->
+<link rel="stylesheet" href="/templates/redevo_beep/css/menu.css" type="text/css" />
 </head>
-<body onload="clickMenu('menu')" class="{S_CONTENT_DIRECTION}">
+<body>
 
 <div id="wrap">
 
@@ -75,58 +77,61 @@
 	<div id="inner_bdr">
 	<div id="topwrap">
 	<div id="logo">
-	<div class="moduletable_yarpo">
+		<div class="moduletable">
 		<p>
-			<a href="http://youthcoders.net/" title="Strona główna YouthCoders.net - programowanie, multimedia, edukacja pozaformalna">
-				<img width="550" height="68" border="0" src="http://youthcoders.net/images/stories/youthcoders.png" alt="Logo YouthCoders.net">
+			<a href="/">
+				<img width="550" height="68" border="0" 
+					alt="YouthCoders.net" 
+					src="http://youthcoders.net/images/stories/youthcoders.png"/>
 			</a>
-			<!-- IF not S_IS_BOT -->
 			<a id="log_yarpo" href="{U_LOGIN_LOGOUT}">
-				<b>{L_LOGIN_LOGOUT}</b>
-			</a>
+			<!-- IF not S_IS_BOT -->
+				{L_LOGIN_LOGOUT}
 			<!-- ENDIF -->
+			</a>
 		</p>
+		</div>
 	</div>
+	<div class="clear"> </div>
 	</div>
-	<div class="clear_yarpo"> </div>
-	</div>
-	<div id="nav_yarpo">
-		<div class="moduletable_menu_yarpo">
-			<ul class="menu_yarpo">
-				<li id="current_yarpo" class="active item1_yarpo">
-					<a href="/">
-						<span>HOME</span>
+
+	<div id="nav">
+		<div class="moduletable_menu">
+			<ul class="menu">
+				<li class="active item1" id="current">
+					<a href="http://devel.y/">
+						<span>home</span>
 					</a>
 				</li>
-				<li class="item33">
+				<li>
 					<a href="/forum/">
-						<span>FORUM</span>
+						<span>forum</span>
 					</a>
 				</li>
-				<li class="item2_yarpo">
+				<li class="item2">
 					<a href="/blog.html">
-						<span>BLOG</span>
+						<span>blog</span>
 					</a>
 				</li>
-				<li class="item8_yarpo">
+				<li class="item8">
 					<a href="/info.html">
-						<span>O NAS</span>
+						<span>o nas</span>
 					</a>
 				</li>
-				<li class="item6_yarpo">
+				<li class="item6">
 					<a href="/kontakt.html">
-						<span>KONTAKT</span>
+						<span>kontakt</span>
 					</a>
 				</li>
 				<!-- IF S_USER_LOGGED_IN -->
-				<li class="item34_yarpo">
+				<li>
 					<a href="/forum/ucp.php">
 						<span>MOJE KONTO</span>
 					</a>
 				</li>
 				<!-- ENDIF -->
 				<!-- IF S_DISPLAY_SEARCH -->
-				<li class="item34_yarpo">
+				<li>
 					<a href="{U_SEARCH}">
 						{L_SEARCH}
 					</a>
@@ -134,6 +139,7 @@
 			</ul>
 		</div>
 	</div>
+
 	<div id="outerwrap">
 	<div id="innerwrap">
 
