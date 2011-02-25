@@ -36,14 +36,9 @@ body {
 
 #wrap {
 	/*background: #FFFFFF;*/
-	width: 990px;
+	width:1000px;
 	text-align:left;
 	margin: 15px auto;
-}
-
-#logo
-{
-	padding: 1px 0 13px 0;
 }
 
 #wrapcentre {
@@ -788,17 +783,83 @@ pre {
 	padding: 10px 15px 0px 0px;
 }
 
-#log_yarpo
-{
+/*  -------------------------- poki co tak na biednie --------------- */
+#nav_yarpo {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background: transparent url(../navbar.gif) repeat-x scroll left top;
+	height:27px;
+	position:relative;
+	width:100%;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:11px;
+	line-height:16px;
+	margin-top: 10px;
+}
+
+#nav_yarpo a:hover {
+	color:#194A91;
+}
+
+
+#nav_yarpo a {
+	color:#000;
+	display:block;
+	padding:6px 20px 5px 0;
+	text-transform:uppercase;
+	width:auto;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#nav_yarpo a:focus, a:active {
+	outline-color:-moz-use-text-color;
+	outline-style:none;
+	outline-width:medium;
+}
+
+#nav_yarpo ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin-top: 10px;
+}
+
+#nav_yarpo li {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:transparent none repeat scroll 0 0;
+	float:left;
+	margin:0;
+	padding:0;
+	width:auto;
+}
+
+#log_yarpo {
 	float: right;
-}
-
-#log_yarpo a
-{
-	font-weight: normal;
+	border: red;
 }
 
 
+/*----------- menuheader.css */
+#nav {
+height:36px; font-family:arial, verdana, sans-serif; font-size:11px;z-index:500;text-align: center;
+}
+#nav .select {
+margin:0; padding:2px 0px 0px; list-style:none; white-space:nowrap;	text-align: center;overflow: hidden;
+}
+#nav .select a {
+height:36px; background: url(); padding:0 0 0 15px; text-decoration:none; line-height:25px; white-space:nowrap; color:#0D0D0D;
+}
+#nav .select a b {
+padding:2px 10px 10px 5px; background:url() right top;
+}
+#nav .sub {
+display:none; margin:0; padding:0 0 0 200px;list-style:none;
+}
+/*------------------ menu2.css --*/
 #hoverpage {font-family: "Lucida Grande", arial, verdana, sans-serif; font-size:76%;
 	-moz-border-radius-bottomleft: 16px;
 	-moz-border-radius-bottomright: 16px;
@@ -849,7 +910,6 @@ pre {
 
 #hoverpage ul#menu div dl dd {line-height:20px; font-size:1.1em; color:#448;}
 #hoverpage ul#menu div dl dt {line-height:30px; color:#333;}
-
 
 /** stopka */
 #footerwrap {
