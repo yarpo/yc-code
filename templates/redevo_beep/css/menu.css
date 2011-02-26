@@ -92,6 +92,7 @@ div#nav
 	width: 1000px;
 	margin: 0 auto;
 	float: none;
+	background: transparent url(../images/footer-logo-bg.png) 50% 50% no-repeat;
 }
 
 #footer .moduletable ul {
@@ -110,6 +111,7 @@ div#nav
 	margin-left: -20px;
 	font-size: 13px;
 	list-style: none;
+	color: #555;
 }
 
 #footer .moduletable li.head a {
