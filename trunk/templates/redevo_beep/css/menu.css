@@ -4,7 +4,7 @@ div#nav
 	border: 1px solid #d4d4d4;
 	display: block;
 	background: #cbcbcb url("../images/menu-bg.png") 0 0 repeat-x scroll;
-	margin: 0 0 10px 0;
+	margin: 0 -10px 10px -10px;
 	line-height: 16px;
 }
 

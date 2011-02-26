@@ -110,13 +110,13 @@ blockquote {
 /* Left/Right Main Menu */
 
 #left ul.menu li, #left ul#mainlevel li{
-padding:0 0 0 8px;
-margin:0 0 4px 0;
+	padding:0 0 0 10px;
+	margin:0 0 4px 0;
 }
 
 #left ul.menu a, #left ul#mainlevel a{
-font-weight:normal;
-color:#000;
+	font-weight:normal;
+	color:#000;
 }
 
 
@@ -169,12 +169,17 @@ tr.sectiontableentry2 td {
 /*layout*/
 
 
-#wrapper{width:990px; text-align:left; }
+#wrapper
+{
+	width:990px; 
+	text-align:left; 
+	margin: 0 auto;
+}
 
 #topwrap{padding:10px 0;}
 
-#logo{float:left; width:60%;} // bylo 40
-#topright{float:right; width:59%;}////// było 59
+#logo{float:left;} 
+#topright{float:right;}
 #user3 ul{ text-align:right; margin:0; padding:0;}
 #user3{width: 150px;}
 #user3 li{display:right; margin:0; padding:0; background:none;}
@@ -187,8 +192,6 @@ tr.sectiontableentry2 td {
 #user4{height: 20px;}
 #user4{left: 690px;}
 div.search{float:right;}
-
-/*#nav{height:27px; width:100%; position:relative; background:url(../images/navbg.gif) top left repeat-x;}*/
 
 #headerwrap, #headerwrapwide, #headerwrapwider{clear:both;}
 #headerwrap .bgbottom, #headerwrapwide .bgbottom, #headerwrapwider .bgbottom{
@@ -259,29 +262,80 @@ background:url(../images/h3bg-grey.png) top right no-repeat;
 #left, .middle, #right, #footer, #info{overflow:hidden;}
 
 .leftwrap{
-padding:10px 0;
-float:left;
+	padding: 10px 0;
+	float:left;
 }
 
+#left
+{
+	float:left;
+	width:185px;
+	background: #ddd;
+	margin-top: -20px;
+	border: 1px solid #ddd;
+	border-width: 0 1px 1px 1px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background: #fefefe url(../images/vertical-bar-bg.png) top right repeat-x;
+}
 
-#left{
-float:left;
-width:184px;
+#left .padding
+{
+	background: transparent url(../images/vertical-shadow-bg.png) top right no-repeat;
+	padding: 15px 0 10px 0;
+	border: 1px solid #fefefe;
+	border-width: 0 1px 1px 1px;
 }
-#left .padding{
-padding:0px 13px 0 0;
+#left , #left .padding
+{
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
-#left .moduletable, #left .moduletable_menu{
-border-right:#cac9c9 1px solid;
-border-bottom:#cac9c9 1px solid;
-margin-bottom:10px;
-padding:5px;
--webkit-border-bottom-right-radius: 3px;
--moz-border-radius-bottomright: 3px;
-border-bottom-right-radius: 3px;
+
+#left #translate_translate
+{
+	display: block;
+	text-align: center;
 }
-#left h3{
-margin:-5px -5px 5px -5px;
+
+#left .menu
+{
+	margin: 5px 10px 15px 10px;
+}
+
+#left .moduletable form
+{
+	text-align: center;
+}
+
+#left .moduletable form input
+{
+	color: #ccc;
+}
+
+#left .moduletable form input:focus
+{
+	color: #333;
+}
+
+#left .moduletable, #left .moduletable_menu
+{
+	border-bottom: 1px solid #ddd;
+	margin-bottom:10px;
+	padding:5px;
+}
+
+#left h3
+{
+	margin:-5px -5px 5px 0;
 }
 .moduletable form{
 width:auto!important;
@@ -299,16 +353,16 @@ background:url(../images/mid-rounded-m.png) top left repeat-y;}
 #middlewider{width:100%;}
 
 
-#middlerightonly{width:795px; background:url(../images/mid-rounded-m-795.png) top left repeat-y;}
-#middlerightonly .bg{background:url(../images/mid-rounded-t-795.png) top left no-repeat;}
-#middlerightonly .bg .bg{background:url(../images/mid-rounded-b-795.png) bottom left no-repeat;}
+#middlerightonly{width:795px; background:url(../images/mid-rounded-m-780.png) top left repeat-y;}
+#middlerightonly .bg{background:url(../images/mid-rounded-t-780.png) top left no-repeat;}
+#middlerightonly .bg .bg{background:url(../images/mid-rounded-b-780.png) bottom left no-repeat;}
 
 
 #leftwrap{width:792px;}
 #leftwrapleftonly{width:100%;}
-#middleleftonly{float:right; width:795px; background:url(../images/mid-rounded-m-795.png) top left repeat-y;}
-#middleleftonly .bg{background:url(../images/mid-rounded-t-795.png) top left no-repeat;}
-#middleleftonly .bg .bg{background:url(../images/mid-rounded-b-795.png) bottom left no-repeat;}
+#middleleftonly{float:right; width:780px; background:url(../images/mid-rounded-m-780.png) top left repeat-y;}
+#middleleftonly .bg{background:url(../images/mid-rounded-t-780.png) top left no-repeat;}
+#middleleftonly .bg .bg{background:url(../images/mid-rounded-b-780.png) bottom left no-repeat;}
 
 #middlewidest{width:100%; background:url(../images/mid-rounded-m-990.png) top left repeat-y;}
 #middlewidest .bg{background:url(../images/mid-rounded-t-990.png) top left no-repeat;}
