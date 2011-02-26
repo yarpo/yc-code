@@ -4,13 +4,10 @@ a, #left ul.menu a:hover, #left ul#mainlevel a:hover,
 #nav a.mainlevel_current-top, #nav li.active a{color:#194a91;}
 
 ul li, #user2 ul li{
-background:url(../images/arrow-navy.png) 2px 7px no-repeat;}
+background:url(../images/arrow-gray.png) 2px 7px no-repeat;}
 #left ul.menu li{
 background:url(../images/bullet-navy.png) 0 5px no-repeat;
 }
 #user2 .moduletable h3{
-background:url(../images/h3bg-navy.png) top right no-repeat;
-}
-#nav li li{
-background:url(../images/bullet-navy.png) 10px 5px no-repeat;
+background:url(../images/h3bg-gray.png) top right no-repeat;
 }
