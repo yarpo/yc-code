@@ -48,12 +48,7 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#login-form').hide();
-		$('#login-activator').show().
-			find('a').
-			click(function() {
-				$('#login-activator').hide();
-				$('#login-form').show();
-			});
+		$('#login-activator').show();
 		$('#modlgn_username').blur(function() {
 			if (0 == this.value.length)
 			{
@@ -61,6 +56,12 @@
 			}
 		});
 	});
+	
+	function logIn()
+	{
+		$('#login-activator').hide();
+		$('#login-form').show();
+	}
 	
 	function dontLogIn()
 	{
@@ -92,7 +93,7 @@
 	</div><!-- #login-form -->
 
 	<div id="login-activator">
-		<a class="option" href="#">zaloguj</a>
+		<a class="option" href="javascript:logIn()">zaloguj</a>
 	</div><!-- #login-activator -->
 	
 	<?php endif; ?>
