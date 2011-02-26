@@ -13,7 +13,9 @@ div#nav
 	border: 1px solid #fff;
 }
 
-#nav, #nav .moduletable_menu, #nav ul>li, #nav ul>li a
+#nav, #nav .moduletable_menu, 
+#nav ul>li, 
+#nav ul>li a
 {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -85,6 +87,98 @@ div#nav
 #nav li.active a span
 {
 	color: #000;
+}
+
+/* logowanie */
+#login
+{
+	font-size: 1.1em;
+	font-family: tahoma, sans-serif;
+}
+
+#login #login-activator,
+#login #login-activator a,
+#login-options li,
+#login-options li a
+{
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+#login ul li
+{
+	list-style: none;
+	background: none;
+	font-size: 0.8em;
+	padding:0;
+	border: 1px solid #D4D4D4;
+}
+
+#login ul#login-options
+{
+	margin: -1px 0 0 0;
+	float: right;
+}
+
+#login ul#login-options li
+{
+	float: left;
+	margin-right: 2px;
+}
+
+#login-activator
+{
+	display: none;
+	margin: -10px 10px 0 0;
+	float: right;
+	border: 1px solid #D4D4D4;
+}
+
+#login a.option
+{
+	float:left;
+	padding: 4px 12px; 
+	background: #cbcbcb url("../images/menu-bg.png") 0 0 repeat-x scroll;
+	border: 1px solid #fff;
+	color: #777;
+}
+
+#login a.option:hover
+{
+	color: #333;
+	text-decoration: none;
+}
+
+#login ul#login-options a.option
+{
+	padding: 2px 6px;
+}
+
+#login-form form
+{
+	background: #cbcbcb url("../images/menu-bg.png") 0 0 repeat-x scroll;
+	margin: -10px 2px 0 0;
+	padding: 5px 0 5px 10px;
+	border: 1px solid #D4D4D4;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+#login-form #modlgn_remember
+{
+	vertical-align: middle;
+}
+
+#login #user-greeting
+{
+	text-align: center;
+	padding: 0;
+	margin: 0;
 }
 
 /* stopka */
