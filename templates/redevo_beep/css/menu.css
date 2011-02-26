@@ -64,7 +64,7 @@ div#nav
 
 #nav li:hover
 {
-	border-color #e4e4e4;
+	border-color: #e4e4e4;
 }
 
 #nav li a
@@ -88,25 +88,50 @@ div#nav
 }
 
 /* stopka */
-#footer {
+#footerwrap
+{
+	padding: 5px 0;
+	margin-top: 10px;
+	border-top: 3px solid #d4d4d4;
+	color:#808080;
+	background: url(../images/footer-bg.png) 0 0 repeat-x;
+	overflow: hidden;
+	text-align: left;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	line-height: 16px;
+}
+
+#footerwrap a
+{
+	color:#808080;
+	font-weight:normal;
+}
+
+#footer
+{
 	width: 1000px;
 	margin: 0 auto;
 	float: none;
 	background: transparent url(../images/footer-logo-bg.png) 50% 50% no-repeat;
+	overflow: hidden;
 }
 
-#footer .moduletable ul {
+#footer .moduletable ul
+{
 	float: left;
 	text-align: left;
 	margin: 0 60px;
 }
 
-#footer .moduletable li  {
+#footer .moduletable li
+{
 	list-style: circle;
 	background: none;
 }
 
-#footer .moduletable li.head {
+#footer .moduletable li.head
+{
 	font-weight: bold;
 	margin-left: -20px;
 	font-size: 13px;
@@ -114,45 +139,53 @@ div#nav
 	color: #555;
 }
 
-#footer .moduletable li.head a {
+#footer .moduletable li.head a
+{
 	font-weight: bold;
-	font-size: 13px;
 }
 
 #footer .moduletable ul:hover li.head,
-#footer .moduletable ul:hover li.head a {
+#footer .moduletable ul:hover li.head a
+{
 	color: #000;
 }
 
-#footer .moduletable ul#about_us_yc {
+#footer .moduletable ul#about_us_yc
+{
 	float: right;
 	margin-right: 40px;
 }
 
-#footer .moduletable ul#about_us_yc ul {
+#footer .moduletable ul#about_us_yc ul
+{
 	margin: 0;
 	border: 1px solid rgb(230, 230, 230);
 	padding-right: 10px;
 
 }
 
-#footer .moduletable ul#about_us_yc:hover ul {
+#footer .moduletable ul#about_us_yc:hover ul
+{
 	border: 1px solid rgb(200, 200, 200);
 	background: rgb(245, 245, 245);
 }
 
-#footer .moduletable ul#about_us_yc li {
+#footer .moduletable ul#about_us_yc li
+{
 	list-style: none;
 }
 
-#footer .moduletable ul#about_us_yc ul li {
+#footer .moduletable ul#about_us_yc ul li
+{
 	float: left;
 }
 
-#footer .moduletable ul#about_us_yc ul li:before {
+#footer .moduletable ul#about_us_yc ul li:before
+{
 	content: '» ';
 }
 
-#footer li a:hover {
+#footer li a:hover
+{
 	color: #222;
 }
