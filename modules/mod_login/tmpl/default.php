@@ -20,7 +20,7 @@
 	</script>
 
 	<div id="login-form">
-		<form action="http://devel.y/index.php" method="post" name="login" id="logout-form">
+		<form action="<?php echo $clear['action_url']; ?>" method="post" name="login" id="logout-form">
 			<input type="hidden" name="option" value="com_user" />
 			<input type="hidden" name="Submit" value="Wyloguj" />
 			<input type="hidden" name="task" value="logout" />
@@ -70,7 +70,7 @@
 	</script>
 
 	<div id="login-form">
-		<form action="http://devel.y/index.php" method="post" name="login">
+		<form action="<?php echo $clear['action_url']; ?>" method="post" name="login">
 			<input tabindex="1" id="modlgn_username" type="text" name="username" value="login" title="Podaj login" />
 			<input tabindex="2" id="modlgn_passwd" type="password" name="passwd" value="hasło" title="Podaj hasło" />
 			<label>
