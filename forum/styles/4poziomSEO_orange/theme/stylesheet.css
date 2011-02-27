@@ -44,6 +44,7 @@ body {
 #logo
 {
 	padding: 1px 0 13px 0;
+	float: left;
 }
 
 #wrapcentre {
@@ -839,6 +840,13 @@ pre {
 #hoverpage ul#menu div dl dd {line-height:20px; font-size:1.1em; color:#448;}
 #hoverpage ul#menu div dl dt {line-height:30px; color:#333;}
 
+/* logowanie */
+/* wiekszekosc w stylu joomli */
+#topright
+{
+	float: right;
+	margin-top: -5px;
+}
 
 /** stopka */
 /* wiekszosc opisana w stylu joomli, importowanym w sekcji head */

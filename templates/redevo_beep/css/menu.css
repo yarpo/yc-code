@@ -223,9 +223,7 @@ div#nav
 
 #user1 form input:focus
 {
-	/*border: 1px solid #999;*/
 	color: #999;
-	/*width: 160px;*/
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
