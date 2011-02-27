@@ -84,14 +84,89 @@
 					alt="YouthCoders.net" 
 					src="http://youthcoders.net/images/stories/youthcoders.png"/>
 			</a>
-			<a id="log_yarpo" href="{U_LOGIN_LOGOUT}">
-			<!-- IF not S_IS_BOT -->
-				{L_LOGIN_LOGOUT}
-			<!-- ENDIF -->
-			</a>
 		</p>
 		</div>
-	</div>
+	</div><!-- #logo -->
+	<div id="topright">
+	<!-- IF not S_USER_LOGGED_IN -->
+		<script type='text/javascript' src='http://code.jquery.com/jquery-1.5.1.min.js'></script>
+		<div id="user3">
+			<div class="moduletable">
+				<div id="login">
+				<script type="text/javascript">
+				$(document).ready(function() {
+					$('#login-form').hide();
+					$('#login-activator').show();
+					$('#modlgn_username').blur(function() {
+						if (0 == this.value.length)
+						{
+							this.value = 'login';
+						}
+					});
+				});
+				function logIn()
+				{
+					$('#login-activator').hide();
+					$('#login-form').show();
+				}
+				function dontLogIn()
+				{
+					$('#login-form').hide();
+					$('#login-activator').show();
+				}
+				</script>
+
+	<div id="login-form" style="display: none;">
+		<form name="login" method="post" action="{S_LOGIN_ACTION}">
+			<input type="text" tabindex="1" value="" size="25" name="username" id="modlgn_username" />
+			<input type="password" tabindex="2" size="25" name="password" id="modlgn_passwd">
+			<label>
+				<input type="checkbox" tabindex="3" name="autologin" id="modlgn_remember" >
+				zapamiętaj mnie
+			</label>
+			<input type="hidden" tabindex="4" name="viewonline" class="radio">
+			{S_HIDDEN_FIELDS}
+			<input type="submit" name="login" class="btnmain" value="{L_LOGIN}" tabindex="5" />
+			<!--<input type="submit" name="sumbit" value="ok">-->
+		</form>
+		<ul id="login-options">
+			<li><a href="/zmien-haslo.html" class="option">przypomnij hasło</a></li>
+			<li><a href="/zapomnialem-loginu.html" class="option">przypomnij login</a></li>
+			<li><a href="/rejestracja.html" class="option">załóż konto!</a></li>
+			<li><a href="javascript:dontLogIn()" class="option">nie loguj</a></li>
+		</ul>
+	</div><!-- #login-form -->
+
+	<div id="login-activator" style="display: block;">
+		<a href="javascript:logIn()" class="option">zaloguj</a>
+	</div><!-- #login-activator -->
+	
+	</div><!-- #login -->
+
+		</div>
+	
+			</div>
+	<!-- ELSE -->
+	<div id="user3">
+		<div class="moduletable">
+			<div id="login">
+				<div id="login-form">
+					<form action="#" onsubmit="return false;" id="logout-form">
+						<p id="user-greeting">{L_LOGIN_LOGOUT}</p>
+					</form>
+					<ul id="login-options">
+						<li><a class="option" href="/dodaj-artykul.html">dodaj artykuł</a></li>
+						<li><a class="option" href="/ustawienia-konta.html">konto serwis</a></li>
+						<li><a class="option" href="/forum/ucp.php">konto forum</a></li>
+						<li><a class="option" href="{U_LOGIN_LOGOUT}">wyloguj</a></li>
+					</ul>
+				</div>
+			</div><!-- #login -->
+		</div>
+	</div><!-- #user3 -->
+	<!-- ENDIF -->
+	</div><!--topright-->
+
 	<div class="clear"> </div>
 	</div>
 
@@ -123,13 +198,6 @@
 						<span>kontakt</span>
 					</a>
 				</li>
-				<!-- IF S_USER_LOGGED_IN -->
-				<li>
-					<a href="/forum/ucp.php">
-						<span>MOJE KONTO</span>
-					</a>
-				</li>
-				<!-- ENDIF -->
 				<!-- IF S_DISPLAY_SEARCH -->
 				<li>
 					<a href="{U_SEARCH}">
