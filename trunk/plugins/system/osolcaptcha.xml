@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system">
+	<name>System - osolCaptcha</name>
+	<author>Sreekanth Dayanand</author>
+	<creationDate>April 2010</creationDate>
+	<copyright>(C) 2010 - Outsource Online.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>joomla@outsource-online.net</authorEmail>
+	<authorUrl>http://www.outsource-online.net/</authorUrl>
+	<lokalizacja_PL>http://www.softdesign-studio.pl</lokalizacja_PL>
+	<version>1.0.4</version>
+	<description>
+	<![CDATA[
+	Rozszerzenie ułatwiające dołączanie do formularzy logowania, rejestracji i kontaktów planszy antyspamowej CAPTCHA. Lokalizacja rozszerzenia: <a href="http://www.softdesign-studio.pl">Softdesign Studio</a>.
+	<span style="color:#900; font-weight:bold; font-size:larger">Po instalacji upewnij się że włączyłeś rozszerzenie klikając <a href="index.php?option=com_plugins&filter_type=system">tutaj</a></span>
+	<h2>Aby dodać plansze CAPTCHA do innych formularzy na stronie</h2>
+Wstaw <div>
+			&lt?php 
+			 <p>
+				
+				<br />
+				global $mainframe;
+				<br />
+				//set the argument below to true if you need to show vertically( 3 cells one below the other)
+				<br />
+				$mainframe->triggerEvent('onShowOSOLCaptcha', array(false)); 
+				</p>
+			?&gt;
+			</div>
+to do kodu HTML w miejsce gdzie ma ukazać się plansza.			
+]]>
+	
+	</description>
+	<languages folder="plugins/system/lang">
+	    <language tag="en-GB" >en-GB.plg_system_osolcaptcha.ini</language>
+		<language tag="it-IT" >it-IT.plg_system_osolcaptcha.ini</language>
+		<language tag="ar-DZ" >ar-DZ.plg_system_osolcaptcha.ini</language>
+		<language tag="de-DE" >de-DE.plg_system_osolcaptcha.ini</language>
+		<language tag="da-DK" >da-DK.plg_system_osolcaptcha.ini</language>
+		<language tag="fr-FR" >fr-FR.plg_system_osolcaptcha.ini</language>
+		<language tag="ca-ES" >ca-ES.plg_system_osolcaptcha.ini</language>
+		<language tag="es-ES" >es-ES.plg_system_osolcaptcha.ini</language>
+		<language tag="nl-NL" >nl-NL.plg_system_osolcaptcha.ini</language>
+		<language tag="pt-PT" >pt-PT.plg_system_osolcaptcha.ini</language>
+		<language tag="pt-BR" >pt-BR.plg_system_osolcaptcha.ini</language>
+		<language tag="pl-PL" >pl-PL.plg_system_osolcaptcha.ini</language>
+	</languages>
+	<files folder="plugins/system">
+		<filename plugin="osolcaptcha">osolcaptcha.php</filename>
+		<folder>osolCaptcha</folder>
+	</files>
+	
+
+       <params >
+    	
+                <param name="bgColor"  type="text" size="25" default="#2c8007" label="Kolor tła dla planszy CAPTCHA" description="Wprowadź kolor tła (6 znaków reprezentujących kolor w systemie hex. Paleta warości kolorów np. na stronie: http://narzedzia.skryptoteka.pl/narzedzia.php?narzedzia=kolory2)" />
+				<param name="textColor" type="text" size="25" default="#ffffff" label="Kolor znaków na planszy CAPTCHA" description="Wprowadź kolor znaków (6 znaków reprezentujących kolor w systemie hex. Paleta warości kolorów np. na stronie: http://narzedzia.skryptoteka.pl/narzedzia.php?narzedzia=kolory2)" />
+                <param name="enableForModules" type="radio"  label="Użyj CAPTCHA w module logowania" description="Ta opcja włącza lub wyłącza planszę CAPTHA w module logowania. Przed włączeniem upewnij się że moduł logowania osadzony jest w miejscu dającym przestrzeń na wstawienie planszy CAPTCHA. Moduł logowania powinien być osadzony w pozycji: 'left','right','top','user2' lub 'user3'). Jeśli moduł logowania jest w innej pozycji, może wówczas zablokować działanie innych sąsiadujących rozszerzeń lub treści."  default="No">
+			<option value="Yes">Tak</option>
+			<option value="No">Nie</option>
+		</param>
+	
+                
+        <param name="imageFunction" type="list"  label="Wybierz wariant ilustrowania znaków" description="Wybierz w jaki sposób znaki mają być ilustrowane na planszy CAPTCHA"  default="Adv">
+			<option value="Plane">Porozrzucane znaki</option>
+			<option value="Adv">Zniekształcone znaki</option>
+		</param>
+		
+		<param type="spacer" />
+		
+		<param name="enableForContactUs" type="radio"  label="Autopublikacja w formularzu kontaktowym" description="If it is a customized contact us form by editing the html or because of template override ,the captcha may not auto add even if you enable tthis"  default="Yes">
+			<option value="Yes">Tak</option>
+			<option value="No">Nie</option>
+		</param>
+		
+		<param name="enableForComLogin" type="radio"  label="Autopublikacja w formularzu logowania komponentów" description="If it is a customized Login form by editing the html or because of template override ,the captcha may not auto add even if you enable tthis"  default="Yes">
+			<option value="Yes">Tak</option>
+			<option value="No">Nie</option>
+		</param>
+		
+		
+		<param name="enableForRegistration" type="radio"  label="Autopublikacja w domyślnym formularzu rejestracji Joomla" description="If it is a customized Registration form by editing the html or because of template override ,the captcha may not auto add even if you enable tthis"  default="Yes">
+			<option value="Yes">Tak</option>
+			<option value="No">Nie</option>
+		</param>
+		
+		
+		<param name="enableForReset" type="radio"  label="Autopublikacja w systemie przypominania hasła" description="If it is a customized Reset Password form by editing the html or because of template override ,the captcha may not auto add even if you enable tthis"  default="Yes">
+			<option value="Yes">Tak</option>
+			<option value="No">Nie</option>
+		</param>
+		
+		<param name="enableForRemind" type="radio"  label="Autopublikacja w systemie przypominania nazwy użytkownika" description="If it is a customized Remind Username form by editing the html or because of template override ,the captcha may not auto add even if you enable tthis"  default="Yes">
+			<option value="Yes">Tak</option>
+			<option value="No">Nie</option>
+		</param>
+		
+		<param name="enableSecondLevelSecurity" type="radio"  label="Zastosuj w innych drugorzędnych formularzach" description="Before enabling this make sure the captcha is seen in all joomla core forms for which this plugin is enabled with the radio buttons.If cpatcha is not visible in any of the forms eventhough it is enabled here,please set it to disable above,otherwas that form wont work"  default="No">
+			<option value="Yes">Tak</option>
+			<option value="No">Nie</option>
+		</param>
+		<param type="spacer" />
+		<param name="botScoutProtection" type="list"  label="Protekcja z serwisem BotScout" description="Blokuje adresy IP sklasyfikowane w serwisie botscout.com jako rozsyłające spam"  default="Disable">
+			<option value="Disable">Wyłączone</option>
+			<option value="Redirect">Przekieruj na określoną stronę</option>
+			<option value="Stop">Zatrzymaj wysyłanie wiadomości</option>
+			
+		</param>
+		<param name="botscoutAPIKey"  type="text" size="25" default="" label="Klucz API w serwisie Botscout" description="Wygeneruj w serwisie botscout.com/getkey.htm unikalny kod API i wprowadź go do tej rubryki " />
+		<param name="reportBotscoutNegativeMail"  type="text" size="25" default="" label="Adres mail na który mają przychodzić raporty z serwisu botscout" description="Adres mail na który mają przychodzić raporty z serwisu botscout. Pozostaw puste jeśli nie potrzebujesz zadnych raportów" />
+		<param name="redirectURLforSuspectedIPs"  type="text" size="50" default="http://www.google.com/" label="Przekieruj użytkowników z blokowanych adresów IP na:" description="Redirect users from suspected IPs dietected with botscout to" />
+        
+        </params> 
+</install>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+	<name>Content - Quote This Article</name>
+	<author>Bernard Gilly</author>
+	<creationDate>2009 Oct 01</creationDate>
+	<copyright>(C) 2008. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>www.alphaplug.com</authorEmail>
+	<authorUrl>http://www.alphaplug.com</authorUrl>
+	<version>1.5.3</version>
+	<description>Provide a link and preview for quote this article on another website for your visitors.</description>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_quotethis.ini</language>
+		<language tag="">fr-FR/fr-FR.plg_quotethis.ini</language>
+	</languages>
+	<files>
+		<filename plugin="quotethis">quotethis.php</filename>
+  	<filename>quotethis/index.html</filename>
+  	<filename>quotethis/js/index.html</filename>
+  	<filename>quotethis/js/mootools.js</filename>
+	</files>	
+  <params>
+    <param name="excludeSectionID" type="text" default="" label="Exclude Section ID" description="Exclude specific section ID : not display the link -Quote This Article- (to specify more than one section, seperate with a comma , ). Use 0 for uncategorized." /> 
+    <param name="excludeCategoryID" type="text" default="" label="Exclude category ID" description="Exclude specific category ID : not display the link -Quote This Article- (to specify more than one category, seperate with a comma , ). Use 0 for uncategorized." /> 
+    <param name="excludeID" type="text" default="" label="Exclude content ID" description="Exclude specific content items : not display the link -Quote This Article- (to specify more than one article, seperate with a comma , )." />
+  	<param name="@spacer" type="spacer" default="" label="" description="" />
+    <param name="loadMootools" type="radio" default="1" label="Load Mootools" description="You can disabled the library Mootools if is already loaded." >
+      <option value="1">Enabled</option>
+      <option value="0">Disabled</option>
+  	</param>  	
+  	<param name="@spacer" type="spacer" default="" label="" description="" />
+    <param name="preview" type="radio" default="1" label="Preview" description="Display preview below textarea." >
+      <option value="1">Enabled</option>
+      <option value="0">Disabled</option>
+  	</param>  	
+  	<param name="@spacer" type="spacer" default="" label="" description="" />
+  	<param name="txtcols" type="text" default="50" label="Num columns textarea" description="Num columns for textarea." />
+  	<param name="txtrows" type="text" default="5" label="Num rows textarea" description="Num rows for textarea." />
+    <param name="title" type="radio" default="title" label="Title" description="Choose your title." >
+      <option value="title">Title</option>
+      <option value="title_alias">Title Alias</option>
+  	</param>
+    <param name="showdate" type="radio" default="1" label="Show date creation" description="Show date creation of article under title." >
+      <option value="1">Show</option>
+      <option value="0">Hide</option>
+    </param>
+    <param name="intro" type="radio" default="0" label="Introtext" description="Show introtext of article." >
+      <option value="1">Show</option>
+      <option value="0">Hide</option>
+  	</param>
+  	<param name="limitcharintro" type="text" default="150" label="Num chars intro" description="Limit num chars for introtext." />
+    <param name="showfirstimage" type="radio" default="0" label="Show first image" description="Show first image include in the content article." >
+      <option value="1">Show</option>
+      <option value="0">Hide</option> 
+    </param>
+  	<param name="widthimage" type="text" default="120" label="Width image (Max)" description="Width image maximum in pixels." />
+    <param name="copyright" type="radio" default="1" label="Show copyright" description="Show copyright of your site under date or introtext creation." >
+      <option value="1">Show</option>
+      <option value="0">Hide</option>
+    </param>
+  	<param name="@spacer" type="spacer" default="" label="Preview" description="Preview" />
+  	<param name="width" type="text" default="350" label="Width" description="Width preview in pixels (without px)." />
+  	<param name="colorborder" type="text" default="456B8F" label="Color border" description="Color border for preview." />
+  	<param name="backgroundcolor" type="text" default="ffffff" label="Background color" description="Background color for preview." />
+  	<param name="fontsizetitle" type="text" default="13" label="Font size Title" description="Font size Title for preview." />
+  	<param name="colortitle" type="text" default="003399" label="Color Title" description="Color link Title for preview." />
+  	<param name="colortitlehover" type="text" default="FF9900" label="Color Title hover" description="Color link hover for Title." />
+  	<param name="fontsize" type="text" default="10" label="Font size text" description="Font size text for preview." />
+  	<param name="fontcolor" type="text" default="222222" label="Font color text" description="Font color text for preview." />	
+  </params>
+</install>

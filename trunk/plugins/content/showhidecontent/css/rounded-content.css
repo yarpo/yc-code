@@ -1,0 +1,8 @@
+.roundedcontent-showhide-container{
+	background-color:#CFBC9B; /*change background-color*/
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	padding:20px;
+	margin-top:15px;
+}
