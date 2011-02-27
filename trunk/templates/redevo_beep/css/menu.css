@@ -39,6 +39,7 @@ div#nav
 	text-transform: uppercase;
 	padding: 5px 12px;
 	width: auto;
+	font: bold 11px Arial,Helvetica,sans-serif;
 }
 
 #nav a:first-letter
@@ -75,7 +76,7 @@ div#nav
 	display: block;
 	background: #e4e4e4 url("../images/menu-item-bg.png") 0 0 repeat-x scroll;
 	color: #888;
-	font: 700 11px Helvetica,sans-serif;
+	font: 777 11px Helvetica,sans-serif;
 	text-decoration: none;
 }
 
@@ -137,6 +138,7 @@ div#nav
 	margin: -10px 10px 0 0;
 	float: right;
 	border: 1px solid #D4D4D4;
+	font: bold 12.1px Tahoma, sans-serif;
 }
 
 #login a.option
@@ -146,6 +148,7 @@ div#nav
 	background: #cbcbcb url("../images/menu-bg.png") 0 0 repeat-x scroll;
 	border: 1px solid #fff;
 	color: #777;
+	font-weight: bold;
 }
 
 #login a.option:hover
@@ -202,6 +205,7 @@ div#nav
 {
 	padding: 10px 20px 5px 0;
 	background: url(../images/search-bg.png) right bottom no-repeat;
+	height: 31px;
 }
 
 #user1 form input[type='text']
@@ -211,6 +215,9 @@ div#nav
 	border: 1px solid #d4d4d4;
 	color: #d4d4d4;
 	height: 16px;
+	background: #fff;
+	vertical-align: bottom;
+	padding:0;
 }
 
 #user1 form input[type='image']
