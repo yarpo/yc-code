@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5.2" type="plugin" group="system" method="upgrade">
+	<name>System - Marco's SQL Injection - LFI Interceptor</name>
+	<author>marco maria leoni</author>
+	<creationDate>May 2010</creationDate>
+	<copyright>Copyright (C) 2010 mmleoni web consulting. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>jforum@mmleoni.net</authorEmail>
+	<authorUrl>www.mmleoni.net</authorUrl>
+	<version>0.98a</version>
+	<description>A simple sql injection / local file includes preventer plugin</description>
+	<files>
+		<filename plugin="marcosinterceptor">marcosinterceptor.php</filename>
+	</files>
+	<params>
+		<param name="frontendonly" type="radio" default="1" label="Works on Front End only" description="Ignore request sent to /administrator">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="namespaces" type="list" default="GET,POST,REQUEST" label="NameSpaces inspected" description="">
+			<option value="GET">Get</option>
+			<option value="GET,POST">Get, Post</option>
+			<option value="REQUEST">Request</option>
+			<option value="GET,POST,REQUEST">Get, Post, Request</option>
+		</param>
+		<param name="ignoredexts" type="textarea" default="" label="Ignored Extension" description="Ignored Components; comma separed values" rows="10" cols="25" />
+	
+		<param type="spacer" default="Notification" />
+		<param name="sendnotification" type="radio" default="0" label="Send Email Alert on injection/inclusion" description="">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="sendto" type="text" default="" label="Mail to notify attack" description="" size="25" />
+		
+  		<param type="spacer" default="Advanced parameters" />
+		<param name="raiseerror" type="radio" default="0" label="Raise Error on Fault" description="Raise a System error on injection/inclusion (Yes: it's good for debug)">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="errorcode" type="text" default="500" label="Http Error Code" description="" size="3" />
+		<param name="errormsg" type="text" default="Internal Server Error" label="Http Error Message" description="" size="50" />
+
+		<param type="spacer" default="Local File Inclusion parameters" />
+		<param name="strictlfi" type="radio" default="0" label="LFI check only on canonical" description="Limit LFI check to view, model, controller, template keys only">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="levellfi" type="text" default="2" label="Max number of consecutive '../'" description="How many dirs away from components?" />
+		
+	</params>
+</install>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="user" method="upgrade">
+	<name>User - AlphaUserPoints - New user</name>
+	<author>Bernard Gilly</author>
+	<creationDate>2010 April 19</creationDate>
+	<copyright>Copyright (C) 2008-2010 Alphaplug.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>www.alphaplug.com</authorEmail>
+	<authorUrl>www.alphaplug.com</authorUrl>
+	<version>1.5.6</version>
+	<description>Assign points to new users</description>
+	<files>
+		<filename plugin="sysplgaup_newregistered">sysplgaup_newregistered.php</filename>
+	</files>
+</install>

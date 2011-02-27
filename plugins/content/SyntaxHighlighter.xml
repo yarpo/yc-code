@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+	<name>Content - SyntaxHighlighter</name>
+	<author>JoomlaTags</author>
+	<creationDate>18 May 2008</creationDate>
+
+	<copyright>GNU/GPLv2</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>joomlatags@gmail.com</authorEmail>
+	<authorUrl>www.rubytags.org</authorUrl>
+	<version>1.0</version>
+       <description>SYNTAXHIGHLIGHTER</description>
+	<files>
+		<filename plugin="SyntaxHighlighter">SyntaxHighlighter.php</filename>
+                
+                <folder>syntaxhighlighter</folder>
+	</files>	
+  <params> 
+  <param name="@spacer" type="spacer" default="&lt;h3&gt;Languages Settings&lt;/h3&gt;" label="" description="" />
+  <param name="AS3" type="list" default="0" label="ActionScript3" description="Enable syntax highlighter for ActionScript3">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+ <param name="Bash" type="list" default="0" label="Bash" description="Enable syntax highlighter for Bash">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+   <param name="Cpp" type="list" default="1" label="C++" description="Enable syntax highlighter for C++">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+  
+    <param name="CSharp" type="list" default="1" label="C#" description="Enable syntax highlighter for C#">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+  <param name="Css" type="list" default="1" label="Css" description="Enable syntax highlighter for Css">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+    <param name="Delphi" type="list" default="0" label="Delphi" description="Enable syntax highlighter for Delphi">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+
+    <param name="Diff" type="list" default="0" label="Diff" description="Enable syntax highlighter for Diff">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+    <param name="Groovy" type="list" default="1" label="Groovy" description="Enable syntax highlighter for Groovy">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+    <param name="Java" type="list" default="1" label="Java" description="Enable syntax highlighter for Java">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+      <param name="JavaFX" type="list" default="0" label="JavaFX" description="Enable syntax highlighter for JavaFx">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+   <param name="JScript" type="list" default="1" label="JavaScript" description="Enable syntax highlighter for JavaScript">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+  <param name="Perl" type="list" default="1" label="Perl" description="Enable syntax highlighter for Perl">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+    <param name="Php" type="list" default="1" label="Php" description="Enable syntax highlighter for Php">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+  <param name="Plain" type="list" default="1" label="Plain" description="Enable syntax highlighter for Plain">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+   <param name="PowerShell" type="list" default="0" label="PowerShell" description="Enable syntax highlighter for PowerShell">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+     <param name="Python" type="list" default="1" label="Python" description="Enable syntax highlighter for Python">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+       <param name="Ruby" type="list" default="1" label="Ruby" description="Enable syntax highlighter for Ruby">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+  <param name="Scala" type="list" default="0" label="Scala" description="Enable syntax highlighter for Scala">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+    <param name="Sql" type="list" default="1" label="SQL" description="Enable syntax highlighter for SQL">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+      <param name="Vb" type="list" default="0" label="VB" description="Enable syntax highlighter for VB">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+  <param name="Xml" type="list" default="1" label="XML" description="Enable syntax highlighter for XML">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+  <param name="@spacer" type="spacer" default="&lt;h3&gt;Advanced Settings&lt;/h3&gt;" label="" description="" />
+  	  <param name="BloggerMode" type="list" default="0" label="BloggerMode" description="Blogger integration. If you are hosting on blogger.com, you must turn this on.">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+    <param name="ClipBoard" type="list" default="0" label="ClipBoard" description="Facilitates clipboard functionality">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+  </param>
+<param name="@spacer" type="spacer" default="&lt;h3&gt;Exclusion Settings&lt;/h3&gt;" label="" description="" />
+      <param name="Exclude_Article_Ids" type="text" default="" label="EXCLUDE_ARTICLE_IDS" description="EXCLUDE_ARTICLE_IDS_DESC"/>
+      <param name="Exclude_Category_Ids" type="text" default="" label="EXCLUDE_CATEGORY_IDS" description="EXCLUDE_CATEGORY_IDS_DESC"/>
+          
+  </params>
+	<languages folder="language">
+	   <language tag="en-GB">en-GB.plg_content_SyntaxHighlighter.ini</language>  
+           <language tag="zh-CN">zh-CN.plg_content_SyntaxHighlighter.ini</language>     
+      </languages>
+
+</install>

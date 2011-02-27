@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content" method="upgrade">
+   <name>Content - JPlayer</name>
+   <author>MaxSVK</author>
+   <authorEmail>max.lv@centrum.sk</authorEmail>
+   <authorUrl>http://vault.futurama.sk/joomla/</authorUrl>
+   <copyright>Copyright (c) 2010 Max. All rights reserved.</copyright>
+   <creationDate>2010-11-01</creationDate>
+   <license>http://www.gnu.org/licenses/gpl-2.0.html GNU GPLv2</license>
+   <version>1.5.2</version>
+   <description>Thank you for installing JPlayer for Joomla!</description>
+
+   <params addpath="/plugins/content/jplayer/elements">
+
+      <param name="" type="header" default="Video parameters" label="" description="" />
+      <param name="videofolder" type="text" default="media/video" size="40" label="Video Folder" description="Folder where you store all the video files. File types: .flv, .mp4" />
+      <param name="videowidth" type="text" default="400" size="4" label="Default width for videos" description="" />
+      <param name="videoheight" type="text" default="300" size="4" label="Default height for videos" description="" />
+
+      <param name="" type="header" default="Audio parameters" label="" description="" />
+      <param name="audiofolder" type="text" default="media/audio" size="40" label="Audio Folder" description="Folder where you store all the audio files. File types: .mp3" />
+      <param name="audiowidth" type="text" default="300" size="4" label="Default width for audio" description="" />
+      <param name="audioheight" type="text" default="20" size="4" label="Default height for audio" description="" />
+
+      <param name="" type="header" default="Youtube parameters" label="" description="" />
+      <param name="youtuberelated" type="radio" default="1" label="Related videos" description="Include related videos">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+      </param>
+      <param name="youtubeborder" type="radio" default="0" label="Border" description="Show border.">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+      </param>
+      <param name="youtubecolors" type="list" default="0" label="Colors" description="Colors of Youtube player. For details visit Youtube site.">
+         <option value="0">default</option>
+         <option value="1">colors #1</option>
+         <option value="2">colors #2</option>
+         <option value="3">colors #3</option>
+         <option value="4">colors #4</option>
+         <option value="5">colors #5</option>
+         <option value="6">colors #6</option>
+         <option value="7">colors #7</option>
+         <option value="8">colors #8</option>
+      </param>
+      <param name="youtuberesolution" type="list" default="2" label="Resolution" description="Resolution of Youtube player.">
+         <option value="1">425x344</option>
+         <option value="2">480x385</option>
+         <option value="3">640x505</option>
+         <option value="4">960x745</option>
+         <option value="5">custom</option>
+      </param>
+      <param name="youtubewidth" type="text" default="480" size="4" label="Custom width" description="" />
+      <param name="youtubeheight" type="text" default="385" size="4" label="Custom height" description="" />
+
+      <param name="" type="header" default="Playlist parameters" label="" description="" />
+      <param name="playlistfolder" type="text" default="media/playlist" size="40" label="Playlist Folder" description="Folder where you store all the playlists. File types: .xml" />
+      <param name="playlistsize" type="text" default="350" size="4" label="Playlist size" description="Height of the playlist." />
+      <param name="playlistposition" type="list" default="bottom" label="Playlist position" description="">
+         <option value="top">Top</option>
+         <option value="bottom">Bottom</option>
+      </param>
+      <param name="shuffle" type="radio" default="0" label="Shuffle" description="Shuffle playback of playlist items">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+      </param>
+
+      <param name="" type="header" default="Player parameters" label="" description="" />
+      <param name="playerversion" type="list" default="default" label="Player version" description="Version of flash player JW Player. Default plugin use version 4.7.811. You can use older version 4.3.132 without JW Player logo at start playing but some functions perhaps not work correctly.">
+         <option value="4-3-132">4.3.132</option>
+         <option value="4-7-811">4.7.811</option>
+      </param>
+      <param name="controlbar" type="list" default="bottom" label="Controlbar position" description="">
+         <option value="top">Top</option>
+         <option value="bottom">Bottom</option>
+         <option value="none">None</option>
+      </param>
+      <param name="transparency" type="radio" default="transparent" label="Player transparency" description="">
+         <option value="opaque">No</option>
+         <option value="transparent">Yes</option>
+      </param>
+      <param name="background" type="text" default="#FFFFFF" size="7" label="Background color" description="Sets the SWF background color using a hexadecimal value" />
+      <param name="backcolor" type="text" default="" size="7" label="Player backcolor" description="Background color of the controlbar and playlist in hexadecimal value" />
+      <param name="frontcolor" type="text" default="" size="7" label="Player frontcolor" description="Color of all icons and texts in the controlbar and playlist in hexadecimal value" />
+      <param name="lightcolor" type="text" default="" size="7" label="Player lightcolor" description="Color of an icon or text when you rollover it with the mouse in hexadecimal value" />
+      <param name="screencolor" type="text" default="" size="7" label="Player screencolor" description="Background color of the display in hexadecimal value" />
+
+      <param name="" type="header" default="General parameters" label="" description="" />
+      <param name="fullscreen" type="radio" default="1" label="Fullscreen" description="Allow fullscreen in video.">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+      </param>
+      <param name="autoplay" type="radio" default="0" label="Autoplay" description="Audio/video autoplay when the page loads.">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+      </param>
+      <param name="repeat" type="list" default="none" label="Repeat" description="Set always to continously play the song/video/playlist or single to continue repeating the selected file in a playlist.">
+         <option value="none">No</option>
+         <option value="always">Always</option>
+         <option value="single">Single</option>
+      </param>
+      <param name="downloadLink" type="radio" default="1" label="Display download link" description="Show link to direct download media (for playlists and remote media is set 'no' )">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+      </param>
+      <param name="skin" type="text" default="" size="40" label="Skin" description="Skin located in directory plugins/content/jplayer/skins/ (example 'nacht.swf')." />
+      <param name="logo" type="text" default="" size="40" label="Logo" description="Logo of your web site (example 'images/jplayer/logo.png')." />
+      <param name="jplayerLink" type="radio" default="0" label="Display JPlayer link" description="Show link to JPlayer homesite">
+         <option value="0">No</option>
+         <option value="1">Yes</option>
+      </param>
+   </params>
+
+   <params group="advanced">
+      <param name="debugMode" type="radio" default="0" label="Debug mode" description="Enable this option to display possible errors or other warnings. Useful for debugging.">
+         <option value="0">Disabled</option>
+         <option value="1">Enabled</option>
+      </param>
+   </params>
+
+  <files>
+    <filename plugin="jplayer">jplayer.php</filename>
+    <folder>jplayer</folder>
+  </files>
+
+</install>

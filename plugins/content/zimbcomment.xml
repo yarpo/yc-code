@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+	<name>ZiMB Comment</name>
+	<author>ZiMB LLC</author>
+	<creationDate>August 2009</creationDate>
+	<copyright>(c) ZiMB LLC 2009.  All rights reserved.</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>anderson.christopher@zimbllc.com</authorEmail>
+	<authorUrl>http://www.zimbllc.com</authorUrl>
+	<version>0.8.0b</version>
+	<description></description>
+	<files>
+		<filename plugin="zimbcomment">zimbcomment.php</filename>
+		<folder>JavaScript</folder>
+	</files>
+	<params>
+	</params>
+</install>

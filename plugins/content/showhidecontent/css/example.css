@@ -1,0 +1,20 @@
+.example-showhide-title a:link, .example-showhide-title a:visited, .example-showhide-title a:hover, .example-showhide-title a:active{
+	color:#000;
+	text-decoration:none;
+}
+
+.example-showhide-title{
+	border:solid 1px red;
+}
+.example-showhide-container{
+	background:#fff;
+	color:#000;
+}
+
+.example2-showhide-title{
+	color:#000;
+}
+.example2-showhide-container{
+	border:solid 1px red;
+}
+

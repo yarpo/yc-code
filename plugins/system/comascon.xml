@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system">
+	<name>Component as Content</name>
+	<author>Omar Muhammad</author>
+	<creationDate>19/11/2010</creationDate>
+	<copyright>© 2010 - Omar Muhammad</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>admin@omar84.com</authorEmail>
+	<authorUrl>http://omar84.com</authorUrl>
+	<version>1.5.7</version>
+	<description>OMAR_DESC</description>
+	<files>
+		<filename plugin="comascon">comascon.php</filename>
+		<filename>comascon.js</filename>
+	</files>
+	<languages>
+   		<language tag="en-GB">language/en-GB.plg_system_comascon.ini</language>
+	</languages>
+	<params>
+		<param name="@readme" type="spacer" default="OMAR_README" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="@03" type="spacer" default="&lt;b&gt;General Settings:&lt;/b&gt;" label="" description="" />
+		<param name="state" type="list" default="1" label="Plugin State" description="When plugin is unpublished, the syntax will be shown, but when disabled from here, all the syntax will disappear.">
+			<option value="1">Enabled (Default)</option>
+			<option value="0">Disabled</option>
+		</param>
+		<param name="type" type="list" default="iframe" label="Default Method" description="Choose the default way to render the included components">
+			<option value="iframe">IFrames (Default)</option>
+			<option value="curl">Curl Functions</option>
+		</param>
+		<param name="debug" type="list" default="1" label="Debug Mode" description="Enable Debug mode (shows a commented line of the URL of the included component at the page source)">
+			<option value="0">No</option>
+			<option value="1">Yes (Default)</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="@04" type="spacer" default="&lt;b&gt;IFrames Settings:&lt;/b&gt;" label="" description="" />
+		<param name="height" type="text" size="4" default="500" label="IFrame Height" description="Height of the component's frame" />
+		<param name="width" type="text" size="4" default="500" label="IFrame Width" description="Width of the component's frame" />
+		<param name="scroll" type="list" default="no" label="Scrolling" description="Enable scrolling for the component's frame">
+			<option value="no">No (Default)</option>
+			<option value="yes">Yes</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="@omar_using" type="spacer" default="OMAR_USING" label="" description="" />
+		<param name="@omar_latest" type="spacer" default="OMAR_LATEST" label="" description="" />
+		<param name="@omar_more" type="spacer" default="OMAR_MORE" label="" description="" />
+		<param name="@omar_email" type="spacer" default="OMAR_EMAIL" label="" description="" />
+		<param name="@omar_review" type="spacer" default="OMAR_REVIEW" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="" type="textarea" cols="40" rows="1" default="" label="" description="" />
+	</params>
+</install>
