@@ -67,6 +67,7 @@
 </script>
 <!-- ENDIF -->
 <link rel="stylesheet" href="/templates/redevo_beep/css/menu.css" type="text/css" />
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.5.1.min.js'></script>
 </head>
 <body>
 
@@ -89,7 +90,6 @@
 	</div><!-- #logo -->
 	<div id="topright">
 	<!-- IF not S_USER_LOGGED_IN -->
-		<script type='text/javascript' src='http://code.jquery.com/jquery-1.5.1.min.js'></script>
 		<div id="user3">
 			<div class="moduletable">
 				<div id="login">
@@ -118,16 +118,16 @@
 
 	<div id="login-form" style="display: none;">
 		<form name="login" method="post" action="{S_LOGIN_ACTION}">
-			<input type="text" tabindex="1" value="" size="25" name="username" id="modlgn_username" />
-			<input type="password" tabindex="2" size="25" name="password" id="modlgn_passwd">
+			<input type="text" name="username" id="modlgn_username" value="login" />
+			<input type="password" name="password" id="modlgn_passwd" />
 			<label>
-				<input type="checkbox" tabindex="3" name="autologin" id="modlgn_remember" >
+				<input type="checkbox" name="autologin" id="modlgn_remember" />
 				zapamiętaj mnie
 			</label>
-			<input type="hidden" tabindex="4" name="viewonline" class="radio">
+			<input type="hidden" name="viewonline" />
 			{S_HIDDEN_FIELDS}
-			<input type="submit" name="login" class="btnmain" value="{L_LOGIN}" tabindex="5" />
-			<!--<input type="submit" name="sumbit" value="ok">-->
+			<input type="submit" name="login" value="OK" />
+
 		</form>
 		<ul id="login-options">
 			<li><a href="/zmien-haslo.html" class="option">przypomnij hasło</a></li>
@@ -140,7 +140,6 @@
 	<div id="login-activator" style="display: block;">
 		<a href="javascript:logIn()" class="option">zaloguj</a>
 	</div><!-- #login-activator -->
-	
 	</div><!-- #login -->
 
 		</div>
