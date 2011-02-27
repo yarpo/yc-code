@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+    <name>JMGoogleSearch Module</name>
+	<author>JoomlaMind.com</author>
+	<creationDate>May, 2010</creationDate>
+	<copyright>(C) 2010 JoomlaMind.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>support@joomlamind.com</authorEmail>
+	<authorUrl>http://joomlamind.com/contact-us.html</authorUrl>
+	<version>1.0</version>
+	<description>JM_GSMOD_DESC</description>
+	<files>
+		<filename module="mod_jmgooglesearch">mod_jmgooglesearch.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+    <languages>
+        <language tag="en-GB">en-GB.mod_jmgooglesearch.ini</language>
+        <language tag="bg-BG">bg-BG.mod_jmgooglesearch.ini</language>
+    </languages>
+    <params>
+        <param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module class suffix" />
+        <param name="label" type="text"  default="Search for..." label="Search Label" description="The text in the serch field." />
+    </params>
+</install>
