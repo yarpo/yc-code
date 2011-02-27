@@ -44,7 +44,7 @@ function plgContentVote( &$row, &$params, $page=0 )
 				$html .= ' />';
 			}
 
-			$html .= '&nbsp;<input class="button" type="submit" name="submit_vote" value="'. JText::_( 'Rate' ) .'" />';
+			$html .= '&nbsp;<input type="image" name="submit_vote" src="/templates/redevo_beep/images/confirm-smallico.png" />';
 			$html .= '<input type="hidden" name="task" value="vote" />';
 			$html .= '<input type="hidden" name="option" value="com_content" />';
 			$html .= '<input type="hidden" name="cid" value="'. $id .'" />';

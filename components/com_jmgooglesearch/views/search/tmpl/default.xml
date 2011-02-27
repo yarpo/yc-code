@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Results">
+		<message>
+			<![CDATA[Google Results]]>
+		</message>
+	</layout>
+	<state>
+        <name>Results</name>
+        <description>Google Results</description>
+    </state>
+</metadata>
