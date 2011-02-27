@@ -41,6 +41,11 @@ body {
 	margin: 15px auto;
 }
 
+.clear
+{
+	clear: both;
+}
+
 #logo
 {
 	padding: 1px 0 13px 0;
@@ -847,6 +852,14 @@ pre {
 	float: right;
 	margin-top: -5px;
 }
+
+/* wyszukiwarka */
+#user1 form input
+{
+	position: relative;
+	top: 6px;
+}
+
 
 /** stopka */
 /* wiekszosc opisana w stylu joomli, importowanym w sekcji head */
