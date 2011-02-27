@@ -1,15 +1,16 @@
 div#nav
 {
-	position: relative;
 	border: 1px solid #d4d4d4;
 	display: block;
 	background: #cbcbcb url("../images/menu-bg.png") 0 0 repeat-x scroll;
 	margin: 0 -10px 10px -10px;
 	line-height: 16px;
+	clear: both;
 }
 
 #nav .moduletable_menu
 {
+	
 	border: 1px solid #fff;
 }
 
@@ -162,7 +163,7 @@ div#nav
 {
 	background: #cbcbcb url("../images/menu-bg.png") 0 0 repeat-x scroll;
 	margin: -10px 2px 0 0;
-	padding: 5px 0 5px 10px;
+	padding: 5px 10px;
 	border: 1px solid #D4D4D4;
 	-webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomleft: 3px;
@@ -174,11 +175,60 @@ div#nav
 	vertical-align: middle;
 }
 
+#modlgn_username, #modlgn_passwd {
+	width: 80px;
+	font: normal 10px verdana, sans-serif; 
+}
+
 #login #user-greeting
 {
 	text-align: center;
 	padding: 0;
 	margin: 0;
+	width: 250px;
+}
+
+/* wyszukiwarka */
+#user1
+{
+	float: right;
+	margin: -22px 30px -24px 0;
+	padding: 0 0 0 20px;
+	background: url(../images/search-bg.png) left bottom no-repeat;
+	
+}
+
+#user1 .moduletable
+{
+	padding: 10px 20px 5px 0;
+	background: url(../images/search-bg.png) right bottom no-repeat;
+}
+
+#user1 form input[type='text']
+{
+	width: 140px;
+	font: normal 10px tahoma, sans-serif; 
+	border: 1px solid #d4d4d4;
+	color: #d4d4d4;
+	height: 16px;
+}
+
+#user1 form input[type='image']
+{
+	border: none;
+	padding:0;
+	margin: 0;
+	vertical-align: bottom;
+}
+
+#user1 form input:focus
+{
+	/*border: 1px solid #999;*/
+	color: #999;
+	/*width: 160px;*/
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 /* stopka */

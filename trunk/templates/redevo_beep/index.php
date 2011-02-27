@@ -6,6 +6,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 
 <head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
 <jdoc:include type="head" /> <!--head set in the global configuration-->
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template?>/css/menu.css" type="text/css" />
@@ -30,7 +31,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			<jdoc:include type="modules" name="logo" style="xhtml" />
 		</div><!-- #logo -->
 		<div id="topright">
-			<div id="user3" style="float: right;">
+			<div id="user3">
 				<jdoc:include type="modules" name="user3" style="xhtml" />
 			</div><!-- #user3 -->
 
@@ -39,30 +40,33 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		<?php endif; ?>
 
 		</div><!--topright-->
+	
 		<div class="clear"></div>
 	</div><!--topwrap-->
+	
+	<?php if($this->countModules('user1')): ?>
+		<div id="user1">
+			<jdoc:include type="modules" name="user1" style="xhtml" />
+		</div><!-- #user1 -->
+	<?php endif; ?>
+	
 
-<?php if($this->countModules("menu")): ?>
+<?php if($this->countModules('menu')): ?>
 	<div id="nav">
 		<jdoc:include type="modules" name="menu" style="xhtml" />
 	</div><!--#nav-->
 <?php endif; ?>
 
-<?php if($this->countModules("header")+$this->countModules("user1")+$this->countModules("user2")): ?>
+<?php if($this->countModules("header")+$this->countModules("user2")): ?>
 	<div id="headerwrap<?php echo $topwidth;?>" class="headerwrap">
 		<div class="bgbottom">
 			<div id="header<?php echo $topwidth;?>">
 				<jdoc:include type="modules" name="header" style="xhtml" />
 			</div><!-- #header<?php echo $topwidth;?> -->
-		<?php if($this->countModules("user2")): ?>
+		<?php if($this->countModules('user2')): ?>
 			<div id="user2">
 				<jdoc:include type="modules" name="user2" style="xhtml" />
-			</div>
-		<?php endif; ?>
-		<?php if($this->countModules("user1")): ?>
-			<div id="user1">
-				<jdoc:include type="modules" name="user1" style="xhtml" />
-			</div>
+			</div><!-- #user2 -->
 		<?php endif; ?>
 			<div class="clear"></div>
 		</div><!-- .bgbottom -->
