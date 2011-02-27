@@ -6,8 +6,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 
 <head>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
 <jdoc:include type="head" /> <!--head set in the global configuration-->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template?>/css/menu.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template?>/css/<?php echo $this->params->get("colorVariation", "blue"); ?>.css" type="text/css" />
