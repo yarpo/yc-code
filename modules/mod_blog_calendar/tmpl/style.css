@@ -80,7 +80,7 @@ color: #6aa3ae;
 }
 .dropList {
 list-style: none;
-background: #FFFFFF;
+background: none;
 }
 
 .dropList>li
