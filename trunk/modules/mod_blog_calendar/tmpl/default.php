@@ -15,6 +15,8 @@ defined('_JEXEC') or die('Restricted access');
 	$showYears= $params->get('show_list_years');
 	$showMonths= $params->get('show_list_months');
 	$showArticles= $params->get('show_list_articles');
+	
+define('SEO_URL', '/blog/kalendarz.html');
 ?>
 
 <link rel="stylesheet" href="/modules/mod_blog_calendar/tmpl/style.css" type="text/css">
@@ -37,7 +39,8 @@ defined('_JEXEC') or die('Restricted access');
 							else{ echo "&#9658;"; } ?>
 		</a>
 		<?php } ?>
-		<a href="index.php?option=com_blog_calendar&year=<?php echo $listYear ?>&modid=<?php echo $module->id ?>">
+		<a href="<?php echo SEO_URL; ?>?year=<?php echo $listYear ?>&amp;modid=<?php echo $module->id ?>">
+		<!-- index.php?option=com_blog_calendar&year=<?php echo $listYear ?>&modid=<?php echo $module->id ?>"> -->
 		<?php echo $listYear ?>
 		</a>
 		(<?php echo $yearCount['total'] ?>)
@@ -68,7 +71,8 @@ defined('_JEXEC') or die('Restricted access');
 							else{ echo "&#9658;"; } ?>
 				</a>
 			<?php } ?>
-			<a href="index.php?option=com_blog_calendar&year=<?php echo $listYear ?>&month=<?php echo $month?>&modid=<?php echo $module->id ?>">
+			<!--<a href="index.php?option=com_blog_calendar&year=<?php echo $listYear ?>&month=<?php echo $month?>&modid=<?php echo $module->id ?>">-->
+			<a href="<?php echo SEO_URL; ?>?year=<?php echo $listYear ?>&amp;month=<?php echo $month?>&amp;modid=<?php echo $module->id ?>">
 			<?php echo date('F',mktime(12,30,30,$month,15,2000,0)) . ($showYears? '': ' '.$listYear)  ?>
 		</a>
 	
