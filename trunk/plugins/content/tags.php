@@ -163,7 +163,7 @@ class plgContentTags extends JPlugin
 
 	private function getLinkForTagResultList( $tag )
 	{
-		return JRoute::_($this->escapeUrl(self::TAG_LISTING_SITE . $tag));
+		return JRoute::_(self::TAG_LISTING_SITE . $this->escapeUrl($tag));
 	}
 
 	function showReleatedArticlesByTags($articleId,$termIds){
