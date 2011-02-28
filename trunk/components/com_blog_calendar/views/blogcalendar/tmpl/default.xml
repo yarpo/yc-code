@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+<layout title="Article list by date"></layout>
+	<state>
+		<name>Article List Layout</name>
+		<description>A list of articles ordered by descdending date</description>
+	<params>
+		<param name="date" type="calendar" default="" label="Show articles written on a specific date (yyyy-mm-dd). Blank to show all " description="Examples: 2006-02-01  2006-02  2006"></param>
+		 <param name="section_ids" type="text" default="" label="Section ID" description="Write the Section IDs of the Sections that you want to appear in the calendar, separated with commas. Leave blank to allow all the sections."></param>
+		 <param name="category_ids" type="text" default="" label="Category ID" description="Write the Category IDs of the Categories that you want to appear in the calendar, separated with commas. Leave blank to allow all the categories."></param>
+		<param name="count" type="text" default="10" label="Number of articles in each page" description="">
+		 </param>
+	<param type="spacer"></param>
+	<param name="show_create_date" type="radio" default="1" label="Show Created Date" description="Show the date below the article title">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+	  </param>
+	  <param name="show_modify_date" type="radio" default="1" label="Show Modified Date">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+	  </param>
+        <param name="show_intro" type="radio" default="1" label="Show Intro Text" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+	</param>
+	  <param name="show_fulltext" type="radio" default="0" label="Show Full Text">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+		<param name="truncate_words" type="text" default="" label="Number of words for truncated text" description="Autotruncate words. If greater than 0 will break other config."/>
+		<param name="clean_xhtml" type="radio" default="0" label="Clean XHTML" description="Choose if you want strip html tags for text output if Autotruncate.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="show_author" type="radio" default="1" label="Show the author name" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+		</param>
+            <param name="show_author_username" type="radio" default="1" label="Show name or username" description="">
+			<option value="1">Name</option>
+			<option value="2">Username</option>
+		</param>
+		<param name="show_section" type="radio" default="1" label="Show section" description="Show the section of the article">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+		</param>
+		<param name="link_section" type="radio" default="1" label="Section Title Linkable" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+		</param>
+		<param name="show_category" type="radio" default="1" label="Show category" description="Show the category of the article">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+		</param>
+		<param name="link_category" type="radio" default="1" label="Category Title Linkable" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+		</param>
+		
+		<param type="spacer"></param>
+		<param name="show_icons" type="radio" default="1" label="Icons">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+		</param>
+		<param name="show_pdf_icon" type="radio" default="1" label="PDF Icon" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+		</param>
+		<param name="show_print_icon" type="radio" default="1" label="Print Icon" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+		</param>
+		<param name="show_email_icon" type="radio" default="1" label="E-Mail Icon" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">Use Globals</option>
+		</param>
+          	<param type="spacer"></param>
+                <param name="cbintegration" type="radio" default="0" label="CBINTEGRATION" description="">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="joomlacomments" type="radio" default="0" label="JoomlaCommentsINTEGRATION" description="">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+	</params>
+	</state>
+</metadata>
