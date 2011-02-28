@@ -17,7 +17,7 @@ $(document).ready(function() {
 	});
 });
 </script>
-<form action="<?php echo JRoute::_('szukaj.html'); ?>" charset="utf-8" method="get">
+<form action="/szukaj.html" charset="utf-8" method="get">
 	<input id="q-search" name="q" type="text" value="<?php echo $value; ?>" />
 	<input id="s-search" name="s" src="/templates/redevo_beep/images/search-ico.png" type="image" />
 </form>
