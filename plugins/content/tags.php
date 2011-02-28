@@ -8,6 +8,9 @@
 defined( '_JEXEC' ) or  die('Restricted access');
 jimport( 'joomla.event.plugin' );
 
+//ini_set( 'display_errors', 'On' ); 
+//error_reporting( E_ALL );
+
 require_once JPATH_SITE.DS.'components'.DS.'com_tag'.DS.'helper'.DS.'helper.php';
 require_once JPATH_SITE.DS.'components'.DS.'com_content'.DS.'helpers'.DS.'route.php';
 class plgContentTags extends JPlugin
@@ -15,97 +18,82 @@ class plgContentTags extends JPlugin
 	/* where to paste code of tags */
 	const BEFORE = 1;
 	const BEFORE_AND_AFTER = 2;
-	const TAG_LISTING_SITE = '/tag';
+	const TAG_LISTING_SITE = 'tag/';
 
 	function plgContentTags( &$subject, $params )
 	{
 		parent::__construct( $subject, $params );
 	}
 
-
 	function onPrepareContent( &$article, &$params, $limitstart )
 	{
-		$app =& JFactory::getApplication();
-		if($app->getName() != 'site') {
-			return true;
-		}
-		if (isset($article) && empty($article->id)){
-			return true;
-		}
-
-		$FrontPageTag=JoomlaTagsHelper::param('FrontPageTag');
-		$BlogTag=JoomlaTagsHelper::param('BlogTag');
-		$view=JRequest :: getVar('view');
-		$layout=JRequest :: getVar('layout');
-		if(( $view== 'frontpage')&&!$FrontPageTag){
-			return true;
-		}
-		if($layout == 'blog'&&!$BlogTag){
-			return true;
-		}
-		if(($layout != 'blog')&&($view == 'category'||$view=='section')){
+		$app = &JFactory::getApplication();
+		if ($app->getName() != 'site' || (isset($article) && empty($article->id)))
+		{
 			return true;
 		}
 
-		$lang = & JFactory::getLanguage();
+		$FrontPageTag = JoomlaTagsHelper::param('FrontPageTag');
+		$BlogTag = JoomlaTagsHelper::param('BlogTag');
+		$view = JRequest :: getVar('view');
+		$layout = JRequest :: getVar('layout');
+		if ((('frontpage' === $view) && !$FrontPageTag) ||
+			('blog' === $layout && !$BlogTag) ||
+			(('blog' !== $layout) && 
+				in_array($view, array('category', 'section'))))
+		{
+			return true;
+		}
+
+		$lang = &JFactory::getLanguage();
 		$lang->load('com_tag', JPATH_SITE);
 
 		$query='select t.id,t.name,t.hits from #__tag_term as t left join #__tag_term_content as c  on c.tid=t.id where c.cid='.$article->id.' order by t.weight desc,t.name';
-
 		$db =& JFactory::getDBO();
 		$db->setQuery($query);
 		$terms = $db->loadObjectList();
-		$SuppresseSingleTerms = JoomlaTagsHelper::param('SuppresseSingleTerms');
-		$HitsNumber = JoomlaTagsHelper::param('HitsNumber');
+
 		$document =& JFactory::getDocument();
 		$document->addStyleSheet(JURI::base() . 'components/com_tag/css/tagcloud.css');
-		$havingTags = false;
-		$links='';
-		$maxTagsNumber=JoomlaTagsHelper::param('MaxTagsNumber', 10);
-		$showRelatedArticles=JoomlaTagsHelper::param('RelatedArticlesByTags', 0);
-		$currentNumber=0;
-		$termIds=array();
-		if(!empty($terms)){
-			$haveValidTags = false;
-			foreach($terms as $term)
-			{
-				if ($currentNumber >= $maxTagsNumber)
-				{
-					break;
-				}
 
-				if ($showRelatedArticles || $SuppresseSingleTerms)
+		$ShowRelatedArticles = JoomlaTagsHelper::param('RelatedArticlesByTags', 0);
+		$termIds = array();
+		
+		if (!empty($terms))
+		{
+			$HitsNumber = JoomlaTagsHelper::param('HitsNumber');
+			$SuppresseSingleTerms = JoomlaTagsHelper::param('SuppresseSingleTerms');
+			$MaxTagsNumber = JoomlaTagsHelper::param('MaxTagsNumber', 10);
+			$links = '';
+
+			for($i = 0, $n = count($terms); $i < $n && $i <= $MaxTagsNumber; $i++)
+			{
+				if ($ShowRelatedArticles || $SuppresseSingleTerms)
 				{
-					$countQuery = 'select count(cid) as ct from jos_tag_term_content where tid='.$term->id;
+					$countQuery = 'select count(cid) as ct from jos_tag_term_content where tid='.$terms[$i]->id;
 					$db->setQuery($countQuery);
 					$ct = $db->loadResult();
 
-					if (@intval($ct) <= 1 && $SuppresseSingleTerms)
+					if ($ct <= 1 && $SuppresseSingleTerms)
 					{
 						continue;
 					}
-					$termIds[] = $term->id;
+					$termIds[] = $terms[$i]->id;
 				}
 
-				$currentNumber++;
-				$link = $this->getLinkForTagResultList($term->name); //'/tag/'.urlencode($term->name);
-				$link = JRoute::_($link);
-				$name = $this->escapeHtml($term->name);
+				$link = $this->getLinkForTagResultList($terms[$i]->name);
+				$terms[$i]->name = JoomlaTagsHelper::ucwords($terms[$i]->name);
+				$name = $this->escapeHtml($terms[$i]->name);
 				$title = $name;
-					
-				$term->name = JoomlaTagsHelper::ucwords($term->name);
-				if($HitsNumber)
+
+				if ($HitsNumber)
 				{
-					$title .= $this->escapeAttributes(';Hits:'.$term->hits);
+					$title .= $this->escapeAttributes(';Hits:'.$terms[$i]->hits);
 				}
 				$links .= '<li><a href="'.$link.'" rel="tag" title="'.$title.'" >'.$name.'</a></li>';
-				$havingTags = true;
 			}
 
-			if($havingTags)
-			{
-				$this->insertTagsCodeInProperPlaceToArticle($article, $links);
-			}
+			$this->insertTagsCodeInProperPlaceToArticle($article, $links);
 		}
 
 		if (JoomlaTagsHelper::param('ShowAddTagButton'))
@@ -119,26 +107,29 @@ class plgContentTags extends JPlugin
 			}
 		}
 
-		if ($showRelatedArticles && !empty($termIds) && 'article' == $view) 
+		if ($ShowRelatedArticles && !empty($termIds) && 'article' == $view) 
 		{
-			$article->text.=$this->showReleatedArticlesByTags($article->id, $termIds);
+			$article->text .= $this->showReleatedArticlesByTags($article->id, $termIds);
 		}
+
 		return true;
 	}
 
 	private function insertTagsCodeInProperPlaceToArticle(&$article, $links)
 	{
-		$tagResult = '<div class="clearfix"></div><div class="tag">'.JText::_('TAGS:').'<ul>'.$links.'</ul></div>';
-		switch (JoomlaTagsHelper::param('TagPosition')) 
+		if ('' !== $links)
 		{
-			case self::BEFORE : 
-				$article->text = $tagResult . $article->text;
-				break;
-			case self::BEFORE_AND_AFTER:
-				$article->text = $tagResult . $article->text . $tagResult;
-				break;
-			default:
-				$article->text .= $tagResult;
+			$tagResult = '<div class="clearfix"></div><div class="tag">'.JText::_('TAGS:').'<ul>'.$links.'</ul></div>';
+			switch (JoomlaTagsHelper::param('TagPosition')) 
+			{
+				case self::BEFORE : 
+					$article->text = $tagResult . $article->text;
+					return;
+				case self::BEFORE_AND_AFTER:
+					$article->text = $tagResult . $article->text . $tagResult;
+					return;
+			}
+			$article->text .= $tagResult;
 		}
 	}
 
@@ -172,7 +163,7 @@ class plgContentTags extends JPlugin
 
 	private function getLinkForTagResultList( $tag )
 	{
-		return $this->escapeUrl(self::TAG_LISTING_SITE . $term->name);
+		return JRoute::_($this->escapeUrl(self::TAG_LISTING_SITE . $tag));
 	}
 
 	function showReleatedArticlesByTags($articleId,$termIds){
