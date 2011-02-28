@@ -124,6 +124,7 @@ class Calendar
     	    $nextMonth = $this->getCalendarLink($next[0], $next[1]);
     	    $nextYear  = $this->getCalendarLink($next[0], $next[12]);
     	    $prevYear  = $this->getCalendarLink($prev[0], $prev[12]);
+			echo 'dziala: ' . $prevMonth . ', ' . $nextMonth . ', ' . $nextYear . ', ' .$prevYear;
     	}
     	else
     	{
@@ -131,6 +132,7 @@ class Calendar
     	    $nextMonth = "";
           $prevYear = "";
     	    $nextYear = "";
+			echo 'nie dziala';
     	}
     	
     	$header = $monthName . (($showYear > 0) ? " " . $year : "");

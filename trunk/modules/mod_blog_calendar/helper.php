@@ -52,7 +52,7 @@ function showCal(&$params,$year,$month,$day='',$ajax=0,$modid) //this function r
 													//for example, the startday is Monday (1)
 	
 	//set the link for the month, this will be the link for the calendar header (ex. December 2007)
-	$cal->monthLink=JRoute::_('index.php?option=com_blog_calendar' . '&year=' . $year .
+	$cal->monthLink=JRoute::_(SEO_URL . '&year=' . $year .
 					'&month=' . $month . '&modid=' . $modid);
 	$cal->modid= $modid;
 	
@@ -232,25 +232,33 @@ function showCal(&$params,$year,$month,$day='',$ajax=0,$modid) //this function r
 
 class MyCalendar extends Calendar
 {
+	//this variable will be an array that contains all the links of the month
+	var $linklist;
 
-var $linklist; //this variable will be an array that contains all the links of the month
-
-    function getDateLink($day, $month, $year) //this function is called from getMonthView(month,year) to get the link of the given day
-    {										  //if this function returns nothing (""), then getMonthView wont put a link on that day
-        
-        $link = "";
-		if(strlen($month)<2)
-		$month = '0'.$month;
-		if(strlen($day)<2)
-		$day = '0'.$day;
-	
-		$date= $year . $month . $day;
-		if(isset($this->linklist[$date])){
-        $link=$this->linklist[$date];  //$this->linklist[$date] was set for every date in the foreach bucle at lines 50-83
+	//this function is called from getMonthView(month,year) to get the link of the given day
+	//if this function returns nothing (""), then getMonthView wont put a link on that day
+	function getDateLink($day, $month, $year) 
+	{
+		$link = "";
+		if (strlen($month)<2)
+		{
+			$month = '0'.$month;
 		}
-		
-	 return $link;
-    }
+		if (strlen($day)<2)
+		{
+			$day = '0'.$day;
+		}
+
+		$url = '';
+		$date= $year . $month . $day;
+		if(isset($this->linklist[$date]))
+		{
+			// $link = $this->linklist[$date];  //$this->linklist[$date] was set for every date in the foreach bucle at lines 50-83
+			$link = SEO_URL . '?year=' . $year . '&amp;month=' . $month . '&amp;day=' . $day;
+		}
+
+		return $link;
+	}
 
   
 
@@ -259,7 +267,9 @@ var $linklist; //this variable will be an array that contains all the links of t
     function getCalendarLink($month, $year)
     {
         $getquery = JRequest::get('GET'); //get the GET query
-		$calendarLink= JURI::current().'?'; //get the current url, without the GET query; and add "?", to set the GET vars
+		//$calendarLink= JURI::current().'?'; //get the current url, without the GET query; and add "?", to set the GET vars
+
+		$calendarLink = SEO_URL . '?';
 
 		foreach($getquery as $key => $value){  /*this bucle goes through every GET variable that was in the url*/
 			if($key!='month' AND $key!='year' AND $key!='day' AND $value){ /*the month,year, and day Variables must be diferent of the current ones, because this is a link for a diferent month */

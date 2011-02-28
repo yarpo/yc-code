@@ -16,7 +16,7 @@ defined('_JEXEC') or die('Restricted access');
 	$showMonths= $params->get('show_list_months');
 	$showArticles= $params->get('show_list_articles');
 	
-define('SEO_URL', '/blog/kalendarz.html');
+define('SEO_URL', '/blog/kalendarz.html'); // index.php?option=com_blog_calendar
 ?>
 
 <link rel="stylesheet" href="/modules/mod_blog_calendar/tmpl/style.css" type="text/css">
