@@ -40,7 +40,6 @@ define('SEO_URL', '/blog/kalendarz.html');
 		</a>
 		<?php } ?>
 		<a href="<?php echo SEO_URL; ?>?year=<?php echo $listYear ?>&amp;modid=<?php echo $module->id ?>">
-		<!-- index.php?option=com_blog_calendar&year=<?php echo $listYear ?>&modid=<?php echo $module->id ?>"> -->
 		<?php echo $listYear ?>
 		</a>
 		(<?php echo $yearCount['total'] ?>)
@@ -71,7 +70,6 @@ define('SEO_URL', '/blog/kalendarz.html');
 							else{ echo "&#9658;"; } ?>
 				</a>
 			<?php } ?>
-			<!--<a href="index.php?option=com_blog_calendar&year=<?php echo $listYear ?>&month=<?php echo $month?>&modid=<?php echo $module->id ?>">-->
 			<a href="<?php echo SEO_URL; ?>?year=<?php echo $listYear ?>&amp;month=<?php echo $month?>&amp;modid=<?php echo $module->id ?>">
 			<?php echo date('F',mktime(12,30,30,$month,15,2000,0)) . ($showYears? '': ' '.$listYear)  ?>
 		</a>
