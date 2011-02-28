@@ -1,0 +1,84 @@
+table.blogCalendar{
+/* style for all the calendar table */
+padding: 0;
+margin: 0;
+font: normal 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #000000;
+text-align: center; 
+border-collapse: collapse;
+}
+
+td.blogCalendarHeader {
+/* the style for The calendar header, this includes the two link arrows and the date*/
+margin: 0;
+padding: 0;
+background: #616D7E;
+color: #fff; 
+font: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+text-align: center;
+}
+
+td.headerDate{
+/* td style for the header date (ex. December 2007)*/ 
+background: #616D7E;
+}
+
+a.headerDate{
+/* link style for the header date */
+font: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #3BB9FF;
+text-align: center;
+text-decoration: none;
+}
+
+td.headerArrow{
+/*td the style for the header link arrows */ 
+background: #616D7E;
+}
+
+a.headerArrow{
+/*link style for the header link arrows*/
+font: bold 18px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #3BB9FF; 
+text-align: center;
+text-decoration: none;
+}
+
+td.dayName{
+/*td style of the day abreviations (S M T W T F S) */
+font: bold 12px/20px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #616B76;
+background: #FFFFFF;
+}
+
+td.blogCalendarDay {
+width: 25px;
+height: 25px;
+text-align: center;
+}
+
+a.blogCalendarDay{
+/* style for a normal link in the calendar (that is not in the actual day) */
+text-decoration: underline;
+font: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #DF9496; text-decoration: none;
+font-weight: bold;
+display: block;
+}
+
+td.blogCalendarToday {
+/* the style for Today day */
+color: #F6F4DA;
+font-weight: bold;
+background: #FAAFBE;
+}
+
+a.blogCalendarToday {
+/* link style for a link that is in the actual day */
+font: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #6aa3ae;
+}
+.dropList {
+list-style: none;
+background: #FFFFFF;
+}

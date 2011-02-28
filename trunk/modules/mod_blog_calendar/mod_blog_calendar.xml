@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Blog Calendar Reload</name>
+	<author>Juan Padial</author>
+	<creationDate>Abril 2009</creationDate>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>sikledir@gmail.com</authorEmail>
+	<authorUrl>http://www.shikle.com</authorUrl>
+	<version>1.2.2</version>
+	<description>
+	<![CDATA[<p>This module displays a calendar and/or a list of articles by year and month. 
+	Use with the blog calendar component.<br>
+	Based on original idea from Justo Gonzales de Rivera</a>
+	</p>]]></description>
+	<files>
+		<filename module="mod_blog_calendar">mod_blog_calendar.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>js/blog_calendar.js</filename>
+		<filename>js/blog_list.js</filename>
+		<filename>img/loading.gif</filename>
+                <filename>img/bg.gif</filename>
+		<filename>calendarClass.php</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/style.css</filename>
+		<filename>tmpl/calendar.gif</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>elements/customRadio.php</filename>
+		<filename>elements/editCSS.php</filename>
+		<filename>elements/includeJS.php</filename>
+	</files>
+	<languages>
+   <language tag="en-GB">language/en-GB/en-GB.mod_blog_calendar.ini</language>
+   <language tag="es-ES">language/es-ES/es-ES.mod_blog_calendar.ini</language>
+	</languages>
+	<params addpath="/modules/mod_blog_calendar/elements/">
+		 <param type="includeJS"></param>
+		 <param name="show_what" type="radio" default="0" label="SHOWWHATLBL" description="SHOWWHATDESC">
+			<option value="0">SHOWWHAT0</option>
+			<option value="1">SHOWWHAT1</option>
+		</param>
+		
+		<param name="show_list_years" type="customRadio" default="1" label="SHOWLISTYEARSLBL" description="SHOWLISTYEARSDESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		
+		
+		<param name="show_list_months" type="customRadio" default="1" label="SHOWLISTMONTHSLBL" description="SHOWLISTMONTHSDESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		
+		
+		<param name="show_list_articles" type="customRadio" default="1" label="SHOWLISTARTICLESLBL" description="SHOWLISTARTICLESDESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		
+		<param name="show_list_sublevels" type="customRadio" default="1" label="SHOWLISTSUBLEVELSLBL" description="SHOWLISTSUBLEVELSDESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="cal_start_date" type="calendar" default="" label="CALSTARTDATELBL" description="CALSTARTDATEDESC">
+		</param>
+		<param name="cal_start_day" type="customRadio" default="1" label="CALSTARTDAYLBL" description="CALSTARTDAYDESC">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+		</param>
+		<param name="cal_length_days" type="customRadio" default="2" label="LENGTHDAYSLBL" description="LENGTHDAYSDESC">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</param>
+		<param name="editCSS" type="editCSS" label="Edit CSS" />
+	<param type="spacer" />
+		 <param name="section_ids" type="text" default="" label="SECIDLBL" description="SECIDDESC" />
+		 <param name="category_ids" type="text" default="" label="CATIDLBL" description="CATIDDESC" />
+		<param name="count" type="text" default="10" label="COUNTLBL" description="" />
+		 
+	<param type="spacer" />
+	<param name="show_create_date" type="radio" default="globals" label="SHOWDATELBL" description="SHOWDATEDESC">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+	  </param>
+	  <param name="show_modify_date" type="radio" default="globals" label="SHOWMODIFYDATELBL" description="SHOWMODIFYDATEDESC">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+	  </param>	  
+		<param name="show_intro" type="radio" default="globals" label="SHOWINTROLBL" description="SHOWINTRODESC">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+		<param name="show_fulltext" type="radio" default="0" label="SHOWFULLTEXTLBL" description="SHOWFULLTEXTDESC">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+		</param>
+		<param name="truncate_words" type="text" default="" label="AUTOTRUNCATEWORDSLBL" description="AUTOTRUNCATEWORDSDESC"/>
+		<param name="clean_xhtml" type="radio" default="0" label="CLEANXHTML" description="CLEANXHTMLDESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="show_author" type="radio" default="globals" label="SHOWAUTHORLBL" description="">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+             <param name="show_author_username" type="radio" default="1" label="SHOWUSNAME" description="SHOWUSNAMEDESC">
+			<option value="1">Name</option>
+			<option value="2">Username</option>
+		</param>
+		<param name="show_section" type="radio" default="globals" label="SHOWSECTIONLBL" description="SHOWSECTIONDESC">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+		<param name="link_section" type="radio" default="globals" label="LINKSECLBL" description="LINKSECLBL">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+		<param name="show_category" type="radio" default="globals" label="SHOWCATEGORYLBL" description="SHOWCATEGORYDESC">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+		<param name="link_category" type="radio" default="globals" label="LINKCATLBL" description="LINKCATDESC">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+		<param type="spacer"></param>
+		<param name="show_icons" type="radio" default="globals" label="Icons">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+		<param name="show_pdf_icon" type="radio" default="globals" label="ICONPDFLBL" description="">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+		<param name="show_print_icon" type="radio" default="globals" label="ICONPRINTLBL" description="">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+		<param name="show_email_icon" type="radio" default="globals" label="ICONMAILLBL" description="">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+			<option value="globals">GLOBALS</option>
+		</param>
+           	<param type="spacer" />
+		<param type="spacer"></param>
+                <param name="cbintegration" type="radio" default="0" label="CBINTEGRATION" description="CBINTEGRATIONDESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+                </param>
+                <param name="joomlacomments" type="radio" default="0" label="JCOMINTEGRATION" description="JCOMINTEGRATIONDESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+	</params>
+	<params group="advanced">
+		<param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class suffix" description="Suffix to be applied to the modultable class" />
+	</params>
+</install>
