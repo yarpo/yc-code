@@ -112,7 +112,7 @@ class JoomlaTuneFeed
 			$this->items[$i]->link = str_replace('&', '&amp;', $this->items[$i]->link);
 
 			$feed.= "		<item>\n";
-			$feed.= "			<title>".$this->htmlspecialchars(strip_tags($this->items[$i]->title))."</title>\n";
+			$feed.= "			<title>".$this->htmlspecialchars(htmlspecialchars ($this->items[$i]->title))."</title>\n";
 			$feed.= "			<link>".$this->items[$i]->link."</link>\n";
 			$feed.= "			<description><![CDATA[".$this->items[$i]->description."]]></description>\n";
 
@@ -154,7 +154,7 @@ class JCommentsRSS
 		if ($config->get('enable_rss') == '1') {
 
 			$object_id = (int) JCommentsInput::getParam($_REQUEST, 'object_id', 0);
-			$object_group = trim(strip_tags(JCommentsInput::getParam($_REQUEST, 'object_group', 'com_content')));
+			$object_group = trim(htmlspecialchars(JCommentsInput::getParam($_REQUEST, 'object_group', 'com_content')));
 			$limit = (int) JCommentsInput::getParam($_REQUEST, 'limit', 100);
 
 			// if no group or id specified - return 404
@@ -246,7 +246,7 @@ class JCommentsRSS
 
 		if ($config->get('enable_rss') == '1') {
 
-			$object_group = trim(strip_tags(JCommentsInput::getParam($_REQUEST, 'object_group', '')));
+			$object_group = trim(htmlspecialchars (JCommentsInput::getParam($_REQUEST, 'object_group', '')));
 			$limit = (int) JCommentsInput::getParam($_GET, 'limit', 100);
 
 			$iso = explode('=', _ISO);

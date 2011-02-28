@@ -248,10 +248,10 @@ class JComments
 		if ($config->getInt('enable_rss') == 1) {
 			$link = JCommentsFactory::getLink('rss', $object_id, $object_group);
 			if (JCOMMENTS_JVERSION == '1.5') {
-				$attribs = array('type' => 'application/rss+xml', 'title' => strip_tags($object_title));
+				$attribs = array('type' => 'application/rss+xml', 'title' => htmlspecialchars ($object_title));
 				$document->addHeadLink($link, 'alternate', 'rel', $attribs);
 			} else {
-				$html = '<link rel="alternate" type="application/rss+xml" title="' . strip_tags($object_title) . '" href="' . $link . '" />';
+				$html = '<link rel="alternate" type="application/rss+xml" title="' . htmlspecialchars ($object_title) . '" href="' . $link . '" />';
 				$mainframe->addCustomHeadTag( $html );
 			}
 		}
@@ -1334,7 +1334,7 @@ class JComments
 		global $mainframe;
 
 		$object_id = (int) JCommentsInput::getParam($_REQUEST, 'object_id', 0);
-		$object_group = trim(strip_tags(JCommentsInput::getParam($_REQUEST, 'object_group', 'com_content')));
+		$object_group = trim(htmlspecialchars(JCommentsInput::getParam($_REQUEST, 'object_group', 'com_content')));
 
 		if ($object_id != 0 && $object_group != '') {
 			$link = JCommentsObjectHelper::getLink($object_id, $object_group);

@@ -88,7 +88,7 @@ class JCommentsAJAX
 					$v = preg_replace('#' . preg_quote($code, '#') . "#isU" . JCOMMENTS_PCRE_UTF8, $key, $v);
 				}
 
-				$v = trim(strip_tags($v));
+				$v = trim(htmlspecialchars ($v));
 
 				// handle magic quotes compatability
 				if (get_magic_quotes_gpc() == 1) {
@@ -109,7 +109,7 @@ class JCommentsAJAX
 				unset($tmp, $m);
 				$values[$k] = $v;
 			} else {
-				$values[$k] = trim(strip_tags($v));
+				$values[$k] = trim(htmlspecialchars($v));
 
 				// handle magic quotes compatability
 				if (get_magic_quotes_gpc() == 1) {
@@ -849,7 +849,7 @@ class JCommentsAJAX
 		$response = & JCommentsFactory::getAjaxResponse();
 
 		$object_id = intval($object_id);
-		$object_group = strip_tags($object_group);
+		$object_group = htmlspecialchars($object_group);
 		$page = intval($page);
 
 		JCommentsAJAX::updateCommentsList($response, $object_id, $object_group, $page);
@@ -885,7 +885,7 @@ class JCommentsAJAX
 		$response = & JCommentsFactory::getAjaxResponse();
 		$comment = new JCommentsDB( $dbo );
 
-		$hash = strip_tags($hash);
+		$hash = htmlspecialchars($hash);
 		$hash = preg_replace('#[\(\)\'\"]#is', '', $hash);
 
 		if ((strlen($hash) == 32) && ($comment->load( (int) $id))) {

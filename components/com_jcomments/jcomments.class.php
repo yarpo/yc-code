@@ -716,7 +716,6 @@ class JCommentsText
 		$text = preg_replace('/&nbsp;/', ' ', $text);
 		$text = preg_replace('/&amp;/', ' ', $text);
 		$text = preg_replace('/&quot;/', ' ', $text);
-		$text = strip_tags($text);
 		$text = htmlspecialchars($text);
 		$text = html_entity_decode($text);
 		
