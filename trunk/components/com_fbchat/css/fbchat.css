@@ -1,0 +1,540 @@
+html {
+	overflow:-moz-scrollbars-vertical;
+}
+
+body {
+	padding-bottom:30px;
+	text-align:left;
+}
+
+#jfbcchat_base {
+	position:fixed;
+	bottom:0;display:block;
+	height:25px;
+	left:15px;
+	background-image:url(../images/bgrepeat.gif);
+	border-left:1px solid #b5b5b5;
+	font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+	font-size:11px;
+}
+
+#jfbcchat_chatboxes {
+	height:25px;
+	overflow:hidden;
+	float:right;
+}
+
+#jfbcchat_chatboxes_wide {
+	height:25px;
+	width:0;
+}
+
+#jfbcchat_chatbox_left {
+	float:right;
+	cursor:pointer;
+	width:10px;
+	height:18px;
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:3px -350px;
+	padding-left:11px;
+	padding-top:6px;
+	color:#333;
+	border-left:1px solid #ccc;
+	margin-top:1px;
+}
+
+#jfbcchat_chatbox_right {
+	float:right;
+	cursor:pointer;
+	width:17px;
+	height:18px;
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:11px -572px;
+	padding-left:3px;
+	padding-top:6px;
+	color:#333;
+	border-left:1px solid #ccc;
+	margin-top:1px;
+}
+	
+.jfbcchat_chatbox_right_last {
+	background-position:11px -611px!important;
+	cursor:default!important;
+	color:#a7a7a7!important;
+}
+
+.jfbcchat_chatbox_left_last {
+	background-position:3px -389px!important;
+	cursor:default!important;
+	color:#a7a7a7!important;
+}
+
+.jfbcchat_chatbox_lr {
+	display:none!important;
+}
+
+.jfbcchat_chatbox_lr_mouseover {
+	background-color:#fff!important;
+}
+
+#jfbcchat_optionsbutton {
+	width:25px;
+	border-right:1px solid #ccc;
+}
+
+#jfbcchat_userstab {
+	width:176px;
+	padding-left:9px;
+}
+
+.jfbcchat_userstabclick {
+	background-position:5px 3px!important;
+	padding-left:8px!important;
+	width:177px!important;
+}
+	
+.jfbcchat_closebox {
+	width:21px;
+	height:12px;
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:4px -934px;
+	float:right;
+}
+	
+.jfbcchat_closebox_bottom {
+	width:16px;
+	height:12px;
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:1px -1010px;
+	float:right;
+}
+	
+.jfbcchat_closebox_bottom_click {
+	background-position:0 -1010px!important;
+}
+	
+.jfbcchat_closebox_bottomhover {
+	background-position:1px -1047px!important;
+}
+	
+.jfbcchat_chatboxmouseoverclose {
+	background-position:4px -973px!important;
+}
+	
+.jfbcchat_name {
+	float:left;
+	color:#FFFFFF;
+}
+	
+#jfbcchat_chatbox_buttons {
+	float:right;
+}
+	
+.jfbcchat_tabmouseover {
+	background-color:#fff!important;
+}
+	
+.jfbcchat_tabmouseovertext {
+	text-decoration:underline;
+}
+	
+.jfbcchat_tab {
+	margin-top:1px;
+	height:18px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #e5e5e5;
+	float:right;
+	padding-left:10px;
+	padding-top:5px;
+	cursor:pointer;
+	font-weight:bold;
+	width:140px;
+	color:#444;
+}
+	
+.jfbcchat_tabclick {
+	background-color:white!important;
+	border-left:1px solid #333!important;
+	border-right:1px solid #333!important;
+	border-bottom:1px solid #333!important;
+	padding-top:4px!important;
+	text-decoration:underline;
+	color:#111!important;
+}
+	
+.jfbcchat_usertabclick {
+	width:141px!important;
+	padding-left:9px!important;
+}
+	
+.jfbcchat_tabpopup {
+	background-color:#fff;
+	position:fixed;
+	width:230px;
+	font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+	font-size:11px;
+}
+	
+#jfbcchat_userstab_popup {
+	width:224px;
+}
+	
+#jfbcchat_optionsbutton_popup {
+	width:224px;
+}
+	
+.jfbcchat_tabopen {
+	display:block!important;
+}
+	
+.jfbcchat_tabtitle {
+	border-right:1px solid #11648f;
+	border-left:1px solid #11648f;
+	border-top:1px solid #11648f;
+	background-color:#3e92bd!important;
+	color:#fff;
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+	padding:5px;
+	font-weight:bold;
+	cursor:pointer;
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:195px -424px;
+	padding-right:0;
+}
+
+.jfbcchat_userstabtitle {
+	border-right:1px solid #11648f;
+	border-left:1px solid #11648f;
+	border-top:1px solid #11648f;
+	background-color:#3e92bd!important;
+	color:#fff;
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+	padding:8px;
+	font-weight:bold;
+	cursor:pointer;
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:205px -433px;
+}
+	
+.jfbcchat_chatboxtabtitlemouseover {
+	background-position:195px -457px!important;
+}
+	
+.jfbcchat_chatboxtabtitlemouseover2 {
+	background-position:205px -466px!important;
+}
+	
+.jfbcchat_tabsubtitle {
+	border-right:1px solid #333;
+	border-left:1px solid #333;
+	background-color:#eee;
+	padding:5px;
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size:9px;
+	color:#666;
+}
+	
+.jfbcchat_tabcontent {
+	border-right:1px solid #333;
+	border-left:1px solid #333;
+	background-color:#fff;
+	background-image:url(../images/tabbottom.gif);
+	background-repeat:no-repeat;
+	background-position:left bottom;
+	padding-bottom:1px;
+	color:#333;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+	
+.jfbcchat_tabcontenttext {
+	height:200px;
+	border-bottom:1px solid #f6f6f6;
+	padding:5px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+	
+.jfbcchat_userscontent {
+	height:200px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+	
+.jfbcchat_tabcontentinput {
+	padding:4px 0 0 25px;
+	border:0;
+	border-top:1px solid #ccc;
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:5px -25px;
+	outline:none;
+}
+	
+.jfbcchat_textarea {
+	width:200px;
+	border:0;
+	height:18px;
+	overflow:hidden;
+	font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+	font-size:11px;
+	color:#444;
+	outline:none;
+}
+	
+.jfbcchat_userlist_hover {
+	background-color:#d8f2ff!important;
+	color:#000;
+}
+	
+.jfbcchat_tooltip_content {
+	background-color:#333;
+	color:#fff;
+	padding:5px;
+	font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+	font-size:11px;
+	white-space:nowrap;
+}
+	
+.jfbcchat_userlist {
+	cursor:pointer;
+	height:20px;
+}
+
+.jfbcchat_userscontentname {
+	float:left;
+	padding-left:5px;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+	
+.jfbcchat_userscontentdot {
+	float:right;
+	background-repeat:no-repeat;
+	background-position:0 2px;
+	width:20px;
+	height:16px;
+}
+	
+.jfbcchat_available {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -129px!important;
+}
+	
+.jfbcchat_away {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -175px!important;
+}
+	
+.jfbcchat_busy {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -221px!important;
+}
+	
+.jfbcchat_offline {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -1088px!important;
+}
+	
+#jfbcchat_tooltip {
+	background-image:url(../images/pointer.png);
+	background-repeat:no-repeat;
+	background-position:right bottom;
+	position:fixed;
+	display:none;
+	padding-bottom:4px;
+}
+	
+.jfbcchat_closebox_bottom_status {
+	float:left;
+	width:16px;
+	height:16px;
+	background-repeat:no-repeat;
+	background-position:0 -1px;
+}
+	
+.jfbcchat_tabalert {
+	width:16px;
+	height:16px;
+	position:absolute;
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -535px;
+	color:#333;
+	font-size:8px;
+	padding-top:1px;
+	text-align:center;
+	text-decoration:none!important;
+}
+	
+.jfbcchat_tabalertlr {
+	width:16px;
+	height:16px;
+	position:absolute;
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -537px;
+	color:white;
+	font-size:8px;
+	padding-top:1px;
+	text-align:center;
+}
+	
+.jfbcchat_chatboxmessage {
+	margin-left:1em;
+}
+	
+.jfbcchat_chatboxmessagefrom {
+	margin-left:-1em;
+	font-weight:bold;
+}
+	
+.jfbcchat_statustextarea {
+	border:1px solid #ccc;
+	width:200px;
+	padding:4px;
+	margin-top:3px;
+	margin-bottom:3px;
+	font-family:'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-size:11px;
+	color:#444;
+	overflow-x:hidden;
+	overflow-y:auto;
+	height:42px;
+	outline:none;
+}
+.jfbcchat_optionsstatus {
+	padding-left:2px;
+	float:left;
+	padding-top:1px;
+	cursor:pointer;
+}
+	
+.jfbcchat_optionsstatus2 {
+	padding-left:10px;
+	float:left;
+}
+	
+.jfbcchat_friendtextbox {
+	border:1px solid #ccc;
+	width:200px;
+	padding:2px;
+	margin-top:4px;
+	font-family:'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-size:11px;
+	color:#444;
+	font-weight:normal;
+}
+	
+.jfbcchat_tabsubtitle a {
+	color:#000;
+}
+	
+.jfbcchat_tabcontent a {
+	color:#287197;
+}
+	
+.jfbcchat_gooffline {
+	color:#000;
+	text-decoration:underline;
+	cursor:pointer;
+}
+	
+.jfbcchat_user_invisible {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:10px -890px!important;
+	width:16px;
+	height:16px;
+}
+	
+.jfbcchat_user_available {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -752px!important;
+	width:16px;
+	height:16px;
+}
+	
+.jfbcchat_user_busy {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:10px -798px!important;
+	width:16px;
+	height:16px;
+}
+	
+#jfbcchat_userstab_icon {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -753px;
+	width:16px;
+	height:16px;
+	float:left;
+	padding-right:5px;
+}
+	
+.jfbcchat_user_invisible2 {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -891px!important;
+}
+	
+.jfbcchat_user_available2 {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -753px!important;
+}
+	
+.jfbcchat_user_busy2 {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -799px!important;
+}
+	
+.jfbcchat_user_away2 {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:0 -845px!important;
+}
+	
+.jfbcchat_optionsimages {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:10px -309px!important;
+}
+
+.jfbcchat_backlink{
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:-4px -1215px!important;
+	width:10px;
+	padding-left:2px;
+	padding-top:2px;
+	margin-top:1px;
+	cursor: auto;
+}
+
+.jfbcchat_backlink_novisible{  
+	width:0px; 
+	cursor: auto;
+	display: none;
+}
+
+.jfbcchat_backlink a{
+	color:transparent;
+}
+  
+.jfbcchat_optionsimages_click {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:10px -310px!important;
+}
+	
+.jfbcchat_optionsimages_exclamation {
+	background:url(../images/jfbcchat.png) no-repeat top left; 
+	background-position:10px -263px!important;
+}
+.poweredby {
+font-size:8px; 
+color:#fff;
+margin-left:55px;
+}
+.poweredby a{
+color:#fff;
+}
+.fbchat_testaudio{
+	cursor:pointer;
+	margin-top:10px;
+	background:url(../images/speaker.png) no-repeat top left;
+	padding-left:20px;
+}
+.speakericon{
+margin-right:8px;	
+}
