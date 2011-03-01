@@ -105,21 +105,19 @@ blockquote {
  
 }
 
-
-
 /* Left/Right Main Menu */
 
-#left ul.menu li, #left ul#mainlevel li{
+#left ul.menu li, #left ul#mainlevel li
+{
 	padding:0 0 0 10px;
 	margin:0 0 4px 0;
 }
 
-#left ul.menu a, #left ul#mainlevel a{
+#left ul.menu a, #left ul#mainlevel a
+{
 	font-weight:normal;
 	color:#000;
 }
-
-
 
 /* LATEST NEWS/POPULAR MODULE LINK STYLES */
 
@@ -167,8 +165,6 @@ tr.sectiontableentry2 td {
 }
 
 /*layout*/
-
-
 #wrapper
 {
 	width:990px; 
@@ -177,7 +173,6 @@ tr.sectiontableentry2 td {
 }
 
 #topwrap{padding:10px 0;}
-
 #logo{float:left;} 
 #topright{float:right;}
 
@@ -345,6 +340,11 @@ background:url(../images/mid-rounded-m.png) top left repeat-y;}
 #pathway span.pathway a:hover
 {
 	background: #f5f5f5;
+}
+
+#message,
+#pathway span.pathway a:hover
+{
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -377,6 +377,30 @@ float:left;
 #mainbody table.blog
 {
 	width: 100%;
+}
+
+#message
+{
+	border: 1px solid #ddd;
+	margin: 10px;
+	padding: 5px 10px;
+	background: transparent url(../images/massage-close-bg.png) right top no-repeat;
+}
+
+#message dt
+{
+	font: bold 1.1em 'Lucida Sans Unicode', sans-serif;
+}
+
+#message dt.error
+{
+	color: #d30;
+}
+
+#message dd.error li
+{
+	background-image: url(../images/error.png);
+	padding: 8px 0 0 23px;
 }
 
 /* jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/ */

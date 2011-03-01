@@ -88,7 +88,22 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 						<div id="pathway"><?php echo JText::_( ":" ); ?>
 							<jdoc:include type="module" name="breadcrumbs" />
 						</div><!-- #pathway -->
+						<script type="text/javascript">
+							$(function() { 
+								if($('#message').text().replace(/^\s+|\s+$/g, '').length == 0) 
+								{ 
+									$('#message').hide(); 
+								} 
+								else
+								{
+									$('#message').click(function() {
+										$(this).slideUp(1500);
+									});
+								}
+							});
+						</script>
 						<div id="message">
+							
 							<jdoc:include type="message" />
 						</div><!-- #message -->
 						<div id="mainbody">
