@@ -231,7 +231,7 @@ class plgContentTags extends JPlugin
 		return '<script type="text/javascript">$(document).ready(function()
 		{
 			$(".relateditemsbytags").click(function() {
-				$(this).find(".relateditems").slideDown();
+				$(this).find(".relateditems").slideDown().end().find("h3").html("Podobne artykuły:");
 			}).find(".relateditems").hide();
 		});</script>';
 	}
