@@ -1,6 +1,6 @@
 // trasnlation module for fbchat
 // http://www.2punti.eu/joomla-facebook-chat.html?lang=en
-// @author: Patryk yarpo Jar [find in google]
+// @author: Patryk yarpo Jar [facebook.com/patryk.yarpo.jar]
 // @data  : 01-03-2011 
 // @uses  : jquery
 // @uses  : google.language
