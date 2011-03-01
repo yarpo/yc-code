@@ -18,17 +18,17 @@ $mainframe->registerEvent( 'onBeforeDisplayContent', 'plgContentVote' );
 
 function plgContentVote( &$row, &$params, $page=0 )
 {
-	$uri = & JFactory::getURI();
-
-	$id 	= $row->id;
 	$html 	= '';
 
 	if (isset($row->rating_count) && $params->get( 'show_vote' ) && !$params->get( 'popup' ))
 	{
 		JPlugin::loadLanguage( 'plg_content_vote' );
-		$html .= '<form method="post" action="' . $uri->toString( ) . '">';
+		$uri = & JFactory::getURI();
+		$url = $uri->toString( ) ;
+		$id = $row->id;
+		$html .= '<form method="post" action="' . $url . '">';
 		$html .= '<script type="text/javascript" src="/includes/js/jquery/plugins/jquery.rating.pack.js"></script>';
-		$html .= '<script type="text/javascript">$(function(){$("input.rate").rating();});</script>';
+		$html .= '<script type="text/javascript">$(function(){$("input.rate").rating({cancel : "' . JText::_('CANCEL') . '"});});</script>';
 
 		if (!$params->get( 'intro_only' ))
 		{
@@ -41,14 +41,14 @@ function plgContentVote( &$row, &$params, $page=0 )
 				{
 					$html .= 'checked="checked"';
 				}
-				$html .= ' />';
+				$html .= '/>';
 			}
 
-			$html .= '&nbsp;<input type="image" name="submit_vote" src="/templates/redevo_beep/images/confirm-smallico.png" />';
+			$html .= '&nbsp;<input type="image" name="submit_vote" src="/templates/redevo_beep/images/confirm-smallico.png" title="' . JText::_('RATE') . '" />';
 			$html .= '<input type="hidden" name="task" value="vote" />';
 			$html .= '<input type="hidden" name="option" value="com_content" />';
 			$html .= '<input type="hidden" name="cid" value="'. $id .'" />';
-			$html .= '<input type="hidden" name="url" value="'.  $uri->toString( ) .'" />';
+			$html .= '<input type="hidden" name="url" value="'.  $url .'" />';
 			$html .= '</span>';
 		}
 		$html .= '</form>';

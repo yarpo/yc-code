@@ -1,0 +1,7 @@
+# version 1.0 2010-05-05
+# author JoomlaMind.com
+# copyright (C) 2010 JoomlaMind.com
+# license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+# pl_PL version by JanekJK, (C) 2010 eduwww.net
+
+# Note : All ini files need to be saved as UTF-8 - No BOM

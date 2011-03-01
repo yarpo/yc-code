@@ -1,0 +1,13 @@
+# version 1.0 2010-05-05
+# author JoomlaMind.com
+# copyright (C) 2010 JoomlaMind.com
+# license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+# pl_PL version by JanekJK, (C) 2010 eduwww.net
+
+# Note : All ini files need to be saved as UTF-8
+
+JM_GSMOD_DESC=<a href="http://joomlamind.com/free-joomla-scripts/67-google-search-component-for-joomla.html">Moduł JMGoogleSearch </a> jest modułem, który formularz wyszukiwania w Twoim serwisie . Musisz go użyć razem z komponentem JMGoogleSearch.<p>Porszę, zagłosuj na ten komponent <a href="#" target="_blank">w serwisie Joomla! Extensions Directory</a>.</p>
+JMGOOGLESEARCH COMPONENT DOES NOT EXIST.=JMGoogleSearch component does not exist.
+SEARCH FOR...=Szukaj terminu...
+SEARCH LABEL=Etykieta wyszukiwania
+THE TEXT IN THE SERCH FIELD.=Tekst w polu wyszukiwania.

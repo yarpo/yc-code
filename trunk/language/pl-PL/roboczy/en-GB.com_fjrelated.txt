@@ -1,0 +1,51 @@
+# en-GB.com_fjrelated.ini
+# Copyright (C) 2008 Mark Dexter. All rights reserved.
+# Polish version by Jan Jackowicz-0KOrczyski. 2010, eduwww.net 
+# License http://www.gnu.org/licenses/gpl-2.0.html
+# Note : All ini files need to be saved as UTF-8 - No BOM
+
+CATEGORY ID=ID kategorii
+COUNT=Pocycji
+PARAMCATEGORYID=Ograniczenie listy wybranych artykułów do określonej kategorii lub listy kategorii. Jeśli pole zostanie puste artykułu będą wybierane ze wszystkich kategorii. Wpisz identyfikatory kategori pobrane z Managera Kategorii (oddzielone spacją) lub literkę C jeśli artykuł dotyczy bieżącej kategorii. (przykład, 'C,21,32').
+PARAMSECTIONID=Ograniczenie listy wybranych artykułów do określonej SEKCJI lub listy SEKCJI. Jeśli pole zostanie puste artykułu będą wybierane ze wszystkich sekcji. Wpisz identyfikatory sekcji pobrane z Managera Sekcji (oddzielone spacją) lub literkę C jeśli artykuł dotyczy bieżącej sekcji. (przykład, 'C,21,32');
+PARAMCREATEDATE=Ukryj lub pokaż datę utwozrenia artykułu
+PARAMARTICLECOUNT=Ilość wyświetlanych pozycji (domyślnie 5)
+PARAMKEYWORDCOUNT=Hide or Show the number of keyword phrases that match the current Article's keyword phrases. Format is '(xx matches)'.
+PARAMKEYWORDLIST=Hide or Show the list of keyword phrases that match the current Article's keyword phrases. Format is an unordered list.
+PARAMORDERING=The order to list articles in. The option 'Keyword Alphabetical' will list each keyword phrase followed by the articles that match that phrase. So an article that has multiple matches will list multiple times under each matching keyword.
+PARAMKEYWORDLABEL=Optional label for the matching keyword (for example, 'Matching Keyword'). This is used to label the list of keywords if the keywords are shown.
+PARAMNOTARTICLETEXT=Optional text to show if the current view is not an article (and, therefore, no related articles will be shown). For example, 'Current view is not an article.'
+PARAMNORELATEDTEXT=Optional text to show if the current view is an article but no related articles are found. For example, 'No related articles found.'
+PARAMAUTHORMATCH=Include articles that match on Author name? If Yes, articles with the same Author as the current article will show.
+PARAMAUTHORALIASMATCH=Include articles that match on Author's alias? If Yes, articles with the same Author Alias as the current article will show.
+SECTION ID=ID sekcji
+KEYWORD MATCH COUNT=ilość słów kluczowych
+KEYWORD MATCH LIST=Lista słów kluczowych
+THE NUMBER OF ITEMS TO DISPLAY (DEFAULT IS 5)=Ilość wyświetlanych artykułów (domyślnie 5)
+ARTICLE CREATE DATE=Data utworzenia artykułu
+TITLE ALPHABETICAL=Tytuły alfabetycznie
+RECENTLY ADDED FIRST=Recently Added First
+OLDEST FIRST=Od najstarszych
+MOST MATCHES FIRST=Od najnowszych
+ARTICLE MANAGER ORDER=Article Manager Order
+KEYWORD ALPHABETICAL=Alfabetycznie wg słó kluczowych
+KEYWORD LABEL=Keyword Label
+TEXT IF NOT AN ARTICLE=Text If Not An Article
+TEXT IF NO RELATED=Text If No Related
+RELATED ARTICLES PLUS=Related Articles Plus
+WRITTEN BY=Written by %s
+MATCH ON AUTHOR=Przypisanbe do Autora
+MATCH ON AUTHOR ALIAS=Dopasuj do aliasu Autora
+MATCH=match
+MATCHES=pasujące
+NO. MATCHES=# nie pasujące
+MATCHING KEYWORDS=Dopasowanie słó kluczowych
+HITS=Pozycji
+AUTHOR=Autor
+TITLE=Tytuł
+FILTER=Filtr
+DISPLAY NUM=Wyświetl #
+ARTICLE TITLE=Tytuł artykułu
+DATE=Data
+REGISTER TO READ MORE...=Zarejestruj się by zobaczyć więcej...
+NOARTICLEMESSAGE=Error: The "Select Article" parameter in the "Menu Item: [Edit]" screen for this Menu Item is blank. Please edit this Menu Item and select an article to supply the keyword list.
