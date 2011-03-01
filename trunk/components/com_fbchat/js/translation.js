@@ -1,12 +1,14 @@
 // trasnlation module for fbchat
 // http://www.2punti.eu/joomla-facebook-chat.html?lang=en
-// @author: Patryk yarpo Jar
+// @author: Patryk yarpo Jar [find in google]
 // @data  : 01-03-2011 
+// @uses  : jquery
+// @uses  : google.language
 
 var yTranslation = function( setup )
 {
 	setup = setup || {};
-	google.load("language", "1");
+	google.load('language', "1");
 
 	var sMsg;
 
