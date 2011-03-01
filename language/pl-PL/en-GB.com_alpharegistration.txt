@@ -1,0 +1,54 @@
+# @package Joomla 1.5
+# @copyright Copyright (C) 2005 Open Source Matters. All rights reserved.
+# @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
+#
+# @component language pack AlphaRegistration
+# @copyright Copyright (C) 2009 - Bernard Gilly
+# @license GNU/GPL
+# @v2.0.8
+ARG_TERMS=Terms
+ARG_AGREE_TO_TERMS=I agree to the terms
+ARG_YOU_ACCEPT_TERMS=You must accept terms of use.
+ARG_TERMS_OF_USE_TEXT=The information, illustrations, text or images (hereinafter referred to as the "Content") on this website are protected by the laws on copyright. You can access this content and use for educational purposes only personal. You may not modify or use the Content for any other purpose without the written permission. Except as otherwise provided below, it is prohibited to reproduce, republish, post, transmit or distribute the content in this website.\n\nYou can print the content found on this website for educational purposes only personal. You must also include in all copies, the copyright notice accompanying the Original Content.\n\nAny software downloadable or otherwise available in this website is licensed, under the terms of the license to use software that applies.\n\nThis website contains links to websites on which it has no control. This website disclaims all responsibility and liability to any communications or materials available at these linked sites.
+ARG_CONFIRM_YOUR_EMAIL=Confirm Your Email
+ARG_CONFIRM_YOUR_EMAIL_TEXT=Now, just confirm your email to activate your account.
+ARG_FILL_OUT_THE_FORM=Fill out the form
+ARG_GET_INVOLVED=Get Involved!
+ARG_ACTIVATION_COMPLETE=Activation Complete!
+ARG_ACTIVATION_COMPLETE_TEXT=Your account has been successfully activated. You can now log in using the username and password you chose during the registration.
+REGISTER_REQUIRED=Fields marked with an asterisk (*) are required
+ARG_REFERRAL_CODE=Referral Code
+ARG_REFERRAL_CODE_DESCRIPTION=If you have a referral code user, you can enter it here, else leave blank.
+ARG_USERNAME_4_CHARS=The username should have at least 4 characters.
+ARG_NAME_4_CHARS=The name should have at least 4 characters.
+ARG_ENTER_A_VALID_EMAIL=Enter a valid email address.
+ARG_PASSWORD_4_CHARS=The password should have at least 4 characters.
+ARG_CONFIRM_PASSWORD=Please, confirm the password.
+ARG_THIS_EMAIL_IS_ALREADY_IN_USE=This email is already in use.
+ARG_THIS_REFERRAL_CODE_NOT_EXIST=This referral code does'nt exist.
+ARG_THE_USERNAME_IS_ALREADY_IN_USE=The Username is already in use.
+ARG_COUPON_CODE=Coupon Code
+ARG_COUPON_CODE_DESCRIPTION=If you have a coupon code points, you can enter it here, else leave blank.
+ARG_THIS_COUPON_CODE_IS_NOT_AVAILABLE=This coupon code is not available.
+ARG_READ_TERMS_OF_USE=Read terms of use now...
+ARG_YOU_MUST_ENTER_A_REFERRAL_USER_CODE=You must enter a referral user code
+ARG_YOU_MUST_ENTER_A_COUPON_CODE=You must enter a coupon code
+ARG_THIS_COUPON_CODE_IS_NOT_AVAILABLE=This coupon code is not available
+ARG_THIS_COUPON_WAS_ALREADY_USED=Sorry, this coupon code was already used
+ARG_YOU_MUST_ENTER_THE_VERIFICATION_CODE=You must enter the verification code
+INCORRECT-CAPTCHA-SOL=Signs from the Captcha Image was not correctly typed by you. Please try again.
+RECAPTCHA=Signs from the Captcha Image was not correctly typed by you. Please try again.
+ARG_REGISTRATION=registration
+ARG_REGISTER=register
+ARG_ACTIVATE=activate
+ARG_THIS_EMAIL_DOMAIN_IS_NOT_AVAILABLE=This email domain name is not available for security reason what site administrator handler. Please try registered another email from another domain. This email domain is blocked in registration.
+ARG_BIRTHDATE=Birthdate
+ARG_YOU_MUST_ENTER_A_BIRTHDATE=You must enter a birthdate
+ARG_BIRTHDATE_FORMAT=format YYYY-MM-DD
+ARG_PLEASE_USE_A_STRONGER_PASSWORD=Please, use a stronger password
+ARG_GENDER=Gender
+ARG_YOU_MUST_ENTER_YOUR_GENDER=You must enter your gender
+ARG_MALE=Male
+ARG_FEMALE=Female
+ARG_MINIMUM_AGE=Minimum age
+ARG_MESSAGE_BLOCKED_BY_BOTSCOUT=IP and/or email blocked by BotScout
