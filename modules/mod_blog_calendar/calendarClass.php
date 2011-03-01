@@ -22,9 +22,6 @@
 
 class Calendar
 {
-
-
-	
     function getDayNames(){return $this->dayNames;}
     function setDayNames($names){$this->dayNames = $names;}
     
@@ -36,22 +33,15 @@ class Calendar
 
     function getStartMonth(){return $this->startMonth;}
     function setStartMonth($month){$this->startMonth = $month;}
-    
-    
 
-
-     
-   /*
+	/*
         Return the HTML for a specified month
     */
     function getMonthView($month, $year, $day)
     {
         return $this->getMonthHTML($month, $year, $day);
     }
-    
-   
-    
-    
+
     /********************************************************************************
     
         The rest are private methods. No user-servicable parts inside.
@@ -59,7 +49,6 @@ class Calendar
         You shouldn't need to call any of these functions directly.
         
     *********************************************************************************/
-
 
     /*
         Calculate the number of days in a month, taking into account leap years.
@@ -73,30 +62,35 @@ class Calendar
    
         $d = $this->daysInMonth[$month - 1];
    
-        if ($month == 2)
-        {
-            // Check for leap year
-            // Forget the 4000 rule, I doubt I'll be around then...
-        
-            if ($year%4 == 0)
-            {
-                if ($year%100 == 0)
-                {
-                    if ($year%400 == 0)
-                    {
-                        $d = 29;
-                    }
-                }
-                else
-                {
-                    $d = 29;
-                }
-            }
-        }
-    
-        return $d;
-    }
+		if ($month == 2)
+		{
+			$d = $this->getLengthOfFeb( $year );
+		}
 
+		return $d;
+	}
+
+	/**
+	 * Returns length of february depends year
+	 * */
+	private function getLengthOfFeb( $year )
+	{
+		if ($year%4 == 0)
+		{
+			if ($year%100 == 0)
+			{
+				if ($year%400 == 0)
+				{
+					return 29;
+				}
+			}
+			else
+			{
+				return 29;
+			}
+		}
+		return 28;
+	}
 
     /*
         Generate the HTML for a given month
@@ -118,29 +112,27 @@ class Calendar
     	$prev = $this->adjustDate($month - 1, $year);
     	$next = $this->adjustDate($month + 1, $year);
     	
-    	if ($showYear == 1)
-    	{
-    	    $prevMonth = $this->getCalendarLink($prev[0], $prev[1]);
-    	    $nextMonth = $this->getCalendarLink($next[0], $next[1]);
-    	    $nextYear  = $this->getCalendarLink($next[0], $next[12]);
-    	    $prevYear  = $this->getCalendarLink($prev[0], $prev[12]);
-			echo 'dziala: ' . $prevMonth . ', ' . $nextMonth . ', ' . $nextYear . ', ' .$prevYear;
-    	}
-    	else
-    	{
-    	    $prevMonth = "";
-    	    $nextMonth = "";
-          $prevYear = "";
-    	    $nextYear = "";
-			echo 'nie dziala';
-    	}
-    	
+		if ($showYear == 1)
+		{
+			$prevMonth = $this->getCalendarLink($prev[0], $prev[1]);
+			$nextMonth = $this->getCalendarLink($next[0], $next[1]);
+			$nextYear  = $this->getCalendarLink($next[0], $next[12]);
+			$prevYear  = $this->getCalendarLink($prev[0], $prev[12]);
+		}
+		else
+		{
+			$prevMonth = "";
+			$nextMonth = "";
+			$prevYear = "";
+			$nextYear = "";
+		}
+
     	$header = $monthName . (($showYear > 0) ? " " . $year : "");
     	$s .= "<table id=\"tableCalendar-".$this->modid."\" class=\"blogCalendar\">\n";
     	$s .= "<tr>\n";
-    	$s .= "<td align=\"center\" class=\"blogCalendarHeader headerArrow\">" . "<a class=\"headerArrow\" id=\"prevMonth-" . $this->modid . "\" href=\"$prevMonth\">&lt;</a>"  . "</td>\n";
+    	$s .= "<td align=\"center\" class=\"blogCalendarHeader headerArrow\">" . "<a class=\"headerArrow\" id=\"prevMonth-" . $this->modid . "\" href=\"$prevMonth\">&lt;</a></td>\n";
     	$s .= "<td align=\"center\" class=\"blogCalendarHeader headerDate\" colspan=\"5\"><a class=\"headerDate\" href=\"" . $this->monthLink . "\">$header</a></td>\n"; 
-    	$s .= "<td align=\"center\" class=\"blogCalendarHeader headerArrow\">" . "<a class=\"headerArrow\" id=\"nextMonth-" . $this->modid . "\" href=\"$nextMonth\" >&gt;</a>"  . "</td>\n";
+    	$s .= "<td align=\"center\" class=\"blogCalendarHeader headerArrow\">" . "<a class=\"headerArrow\" id=\"nextMonth-" . $this->modid . "\" href=\"$nextMonth\" >&gt;</a></td>\n";
     	$s .= "</tr>\n";
     	
     	$s .= "<tr>\n";

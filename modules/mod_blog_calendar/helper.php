@@ -16,79 +16,68 @@ require_once (dirname(__FILE__).DS.'calendarClass.php');
 
 class modBlogCalendarHelper
 {
-
-
-	
-function showCal(&$params,$year,$month,$day='',$ajax=0,$modid) //this function returns the html of the calendar for a given month
+	function showCal(&$params,$year,$month,$day='',$ajax=0,$modid) //this function returns the html of the calendar for a given month
 	{
-	global $mainframe;
-	$offset= $mainframe->getCfg('offset');
-	
-	$language=& JFactory::getLanguage(); //get the current language
-	$language->load( 'mod_blog_calendar' ); //load the language ini file of the module
-	$article= $language->_('VALUEARTICLE');
-	$articles= $language->_('VALUEARTICLES'); //this strings are used for the titles of the links
-	$article2= $language->_('VALUEARTICLE2');
-	
-	
-	$rows= $this->setTheQuery($params,$year,$month,$day,$ajax,0);
-	
+		global $mainframe;
+		$offset= $mainframe->getCfg('offset');
 		
-	$cal = new MyCalendar; //this object creates the html for the calendar
-	$dayNamLen= $params->get('cal_length_days');
-	
-	$cal->dayNames = array(substr(JText::_( 'SUN' ),0,$dayNamLen), substr(JText::_( 'MON' ),0,$dayNamLen),
-	substr(JText::_( 'TUE' ),0,$dayNamLen), substr(JText::_( 'WED' ),0,$dayNamLen),
-	substr(JText::_( 'THU' ),0,$dayNamLen),	substr(JText::_( 'FRI' ),0,$dayNamLen),
-	substr(JText::_( 'SAT' ),0,$dayNamLen));
-	
-    $cal->monthNames = array(JText::_( 'JANUARY' ), JText::_( 'FEBRUARY' ), JText::_( 'MARCH' ), 
-							JText::_( 'APRIL' ), JText::_( 'MAY' ), JText::_( 'JUNE' ),
-                            JText::_( 'JULY' ), JText::_( 'AUGUST' ), JText::_( 'SEPTEMBER' ), 
-							JText::_( 'OCTOBER' ), JText::_( 'NOVEMBER' ), JText::_( 'DECEMBER' ) );
-							
-	$cal->startDay = $params->get('cal_start_day'); //set the startday (this is the day that appears in the first column). Sunday = 0
-													//it is loaded from the language ini because it may vary from one country to another, in Spain
-													//for example, the startday is Monday (1)
-	
-	//set the link for the month, this will be the link for the calendar header (ex. December 2007)
-	$cal->monthLink=JRoute::_(SEO_URL . '&year=' . $year .
-					'&month=' . $month . '&modid=' . $modid);
-	$cal->modid= $modid;
-	
-	
+		$language=& JFactory::getLanguage(); //get the current language
+		$language->load( 'mod_blog_calendar' ); //load the language ini file of the module
+		$article= $language->_('VALUEARTICLE');
+		$articles= $language->_('VALUEARTICLES'); //this strings are used for the titles of the links
+		$article2= $language->_('VALUEARTICLE2');
+
+		$rows= $this->setTheQuery($params,$year,$month,$day,$ajax,0);
+
+		$cal = new MyCalendar; //this object creates the html for the calendar
+		$dayNamLen= $params->get('cal_length_days');
+
+		$cal->dayNames = array(substr(JText::_( 'SUN' ),0,$dayNamLen), substr(JText::_( 'MON' ),0,$dayNamLen),
+		substr(JText::_( 'TUE' ),0,$dayNamLen), substr(JText::_( 'WED' ),0,$dayNamLen),
+		substr(JText::_( 'THU' ),0,$dayNamLen),	substr(JText::_( 'FRI' ),0,$dayNamLen),
+		substr(JText::_( 'SAT' ),0,$dayNamLen));
+
+		$cal->monthNames = array(JText::_( 'JANUARY' ), JText::_( 'FEBRUARY' ), JText::_( 'MARCH' ), 
+								JText::_( 'APRIL' ), JText::_( 'MAY' ), JText::_( 'JUNE' ),
+								JText::_( 'JULY' ), JText::_( 'AUGUST' ), JText::_( 'SEPTEMBER' ), 
+								JText::_( 'OCTOBER' ), JText::_( 'NOVEMBER' ), JText::_( 'DECEMBER' ) );
+								
+		$cal->startDay = $params->get('cal_start_day'); //set the startday (this is the day that appears in the first column). Sunday = 0
+														//it is loaded from the language ini because it may vary from one country to another, in Spain
+														//for example, the startday is Monday (1)
+
+		//set the link for the month, this will be the link for the calendar header (ex. December 2007)
+		$cal->monthLink=JRoute::_(SEO_URL . '?year=' . $year .
+						'&month=' . $this->startsWithZeros($month) . '&modid=' . $modid);
+		$cal->modid= $modid;
+
 		foreach ( $rows as $row )
 		{
-		$created=& new JDate($row->created, -$offset);
-		
-		$counter= Array();
-		
-		$createdYear=$created->toFormat('%Y');
-		$createdMonth=$created->toFormat('%m');
-		$createdDay=$created->toFormat('%d'); //have to use %d because %e doesn't works on windows
-		$createdDate=$createdYear . $createdMonth . $createdDay; //this makes an unique variable for every day
-		$counter[$createdDate]+=1; //$counter[$date] counts the number of articles in each day, to display it as a title in the link of the day
-		
-		//linklist is the array that stores the link strings for each day
-		$cal->linklist[$createdDate]=	JRoute::_('index.php?option=com_blog_calendar'.
-								'&year=' . $createdYear . '&month=' . $createdMonth . '&day=' . 
-								$createdDay . '&modid=' . $modid);
-		$cal->linklist[$createdDate].="\" title=\""; //the calendar class sets the links this way: <a href=" . THE LINK STRING . ">
-											 //so, the easiest way to add a title to that link is by setting THE LINK STRING = the link" title="the title
-											 //the result link would be <a href="the link" title="the title">
-		$cal->linklist[$createdDate].= $counter[$createdDate] . ' ';
-		$cal->linklist[$createdDate].= ($counter[$createdDate] > 1)? $articles : $article;
-		$cal->linklist[$createdDate].= ' ' . $article2;
-		//the above 3 lines output something like: 3 articles on this day. Or: 1 article on this day
-		
+			$created=& new JDate($row->created, -$offset);
+			$counter= Array();
+			$createdYear=$created->toFormat('%Y');
+			$createdMonth=$created->toFormat('%m');
+			$createdDay=$created->toFormat('%d'); //have to use %d because %e doesn't works on windows
+			$createdDate=$createdYear . $createdMonth . $createdDay; //this makes an unique variable for every day
+			$counter[$createdDate]+=1; //$counter[$date] counts the number of articles in each day, to display it as a title in the link of the day
+			//linklist is the array that stores the link strings for each day
+			$cal->linklist[$createdDate]=	JRoute::_(SEO_URL . '?' . //'index.php?option=com_blog_calendar&'.
+									'year=' . $createdYear . '&month=' . self::startsWithZeros($createdMonth) . '&day=' . 
+									self::startsWithZeros($createdDay) . '&modid=' . $modid);
+			$cal->linklist[$createdDate].="\" title=\""; //the calendar class sets the links this way: <a href=" . THE LINK STRING . ">
+												 //so, the easiest way to add a title to that link is by setting THE LINK STRING = the link" title="the title
+												 //the result link would be <a href="the link" title="the title">
+			$cal->linklist[$createdDate].= $counter[$createdDate] . ' ';
+			$cal->linklist[$createdDate].= ($counter[$createdDate] > 1)? $articles : $article;
+			$cal->linklist[$createdDate].= ' ' . $article2;
+			//the above 3 lines output something like: 3 articles on this day. Or: 1 article on this day
 		}
 
-	return $cal->getMonthView($month,$year,$day);
-
+		return $cal->getMonthView($month,$year,$day);
 	}
 	
-		function getDate_byId($id){
-		
+	function getDate_byId($id)
+	{
 		global $mainframe;
 		$offset= $mainframe->getCfg('offset');
 		
@@ -221,11 +210,21 @@ function showCal(&$params,$year,$month,$day='',$ajax=0,$modid) //this function r
 				($catid ? $catCondition : '' ). //add the $catCondition if $catid exists
 				' ORDER BY created DESC'; //order by date created descending				
 		}
-	//set the query and load the results
-	$db->setQuery($query);
-	$results = $db->loadObjectList();
-	
-	return $results;
+		//set the query and load the results
+		$db->setQuery($query);
+		$results = $db->loadObjectList();
+		
+		return $results;
+	}
+
+	public static function startsWithZeros($number, $expectedLength = 2)
+	{
+		$number = strval($number);
+		while(strlen($number) < $expectedLength)
+		{
+			$number = '0' . $number;
+		}
+		return $number;
 	}
 }
 
@@ -240,45 +239,48 @@ class MyCalendar extends Calendar
 	function getDateLink($day, $month, $year) 
 	{
 		$link = "";
-		if (strlen($month)<2)
-		{
-			$month = '0'.$month;
-		}
-		if (strlen($day)<2)
-		{
-			$day = '0'.$day;
-		}
+		$month = modBlogCalendarHelper::startsWithZeros($month);
+		$day = modBlogCalendarHelper::startsWithZeros($day);
 
-		$url = '';
-		$date= $year . $month . $day;
-		if(isset($this->linklist[$date]))
+		$date = $year . $month . $day;
+		if (isset($this->linklist[$date]))
 		{
-			// $link = $this->linklist[$date];  //$this->linklist[$date] was set for every date in the foreach bucle at lines 50-83
+			// $link = $this->linklist[$date];
 			$link = SEO_URL . '?year=' . $year . '&amp;month=' . $month . '&amp;day=' . $day;
 		}
 
 		return $link;
 	}
 
-  
+	/**
+	 * returns the URL that tells what month of should be displayed
+	 * if there are more params in GET, they will be inserted into link as well
+	 * */
+	function getCalendarLink($month, $year)
+	{
+		$calendarLink = $this->safeGetParams();
+		$calendarLink .= 'month=' . 
+			modBlogCalendarHelper::startsWithZeros($month) .
+			'&amp;year=' . modBlogCalendarHelper::startsWithZeros($year);
+		return $calendarLink;
+	}
 
-  //Return the URL to link to in order to display a calendar for a given month/year.
-  //this function is called to get the links of the two arrows in the header.
-    function getCalendarLink($month, $year)
-    {
-        $getquery = JRequest::get('GET'); //get the GET query
-		//$calendarLink= JURI::current().'?'; //get the current url, without the GET query; and add "?", to set the GET vars
-
+	private function safeGetParams()
+	{
+		$_get = JRequest::get('GET');
 		$calendarLink = SEO_URL . '?';
 
-		foreach($getquery as $key => $value){  /*this bucle goes through every GET variable that was in the url*/
-			if($key!='month' AND $key!='year' AND $key!='day' AND $value){ /*the month,year, and day Variables must be diferent of the current ones, because this is a link for a diferent month */
-				$calendarLink.= $key . '=' . $value . '&amp;';
+		// this bucle goes through every GET variable that was in the url
+		foreach($_get as $key => $value)
+		{
+			// the month,year, and day Variables must be diferent of the current ones, because this is a link for a diferent month
+			if (!in_array($key, array('month', 'year', 'day')) && $value)
+			{ 
+				$calendarLink .= $key . '=' . $value . '&amp;';
 			}
 		}
-		
-		$calendarLink.='month='.$month.'&amp;year='.$year; //add the month and the year that was passed to the function to the GET string
+
 		return $calendarLink;
-    }
+	}
 }
 ?>
