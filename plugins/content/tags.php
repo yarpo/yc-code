@@ -205,11 +205,12 @@ class plgContentTags extends JPlugin
 		if(empty($rows)){
 			return '';
 		}
-		$user		=& JFactory::getUser();
-		$aid		= $user->get('aid', 0);
-		
-		$html='<div class="relateditemsbytags"><h3>'.$relatedArticlesTitle.'</h3><ul class="relateditems">';
-		$link;
+		$user =& JFactory::getUser();
+		$aid = $user->get('aid', 0);
+
+		$html = $this->insertJsCode();
+		$html .= '<div class="relateditemsbytags"><h3>'.$relatedArticlesTitle.'</h3><ul class="relateditems">';
+
 		foreach ( $rows as $row )
 		{
 			if($row->access <= $aid)
@@ -225,6 +226,15 @@ class plgContentTags extends JPlugin
 
 	}
 
+	private function insertJsCode()
+	{
+		return '<script type="text/javascript">$(document).ready(function()
+		{
+			$(".relateditemsbytags").click(function() {
+				$(this).find(".relateditems").slideDown();
+			}).find(".relateditems").hide();
+		});</script>';
+	}
 
 	function canUserAddTags($user, $article_id)
 	{
