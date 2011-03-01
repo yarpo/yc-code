@@ -42,9 +42,13 @@
 			$calendar = $helper->showCal($params,$year,$month,$day,$ajax,$module->id);;
 		
 		JHTML::_('behavior.mootools');
-		$doc->addScriptDeclaration('var month=' . $month . '; var year=' . $year . '; var calendar_baseurl=\''. JURI::base() . '\';');
-		$doc->addScript( 'modules/mod_blog_calendar/js/blog_calendar.js' );
-		$doc->addScript( 'modules/mod_blog_calendar/js/blog_list.js' );
+		if (!defined('MOD_BLOG_CALENDAR'))
+		{
+			$doc->addScriptDeclaration('var month=' . intval($month) . ', year=' . intval($year) . ', calendar_baseurl=\''. JURI::base() . '\';');
+			$doc->addScript( 'modules/mod_blog_calendar/js/blog_calendar.js' );
+			$doc->addScript( 'modules/mod_blog_calendar/js/blog_list.js' );
+			define('MOD_BLOG_CALENDAR', true);
+		}
 	}
 	
 require(JModuleHelper::getLayoutPath('mod_blog_calendar'));
