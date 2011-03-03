@@ -415,6 +415,7 @@ var initialize = function ($) {
             }
         }
         function E(Y) {
+			//alert(Y)
             $.ajax({
                 async: false, 
                 url: g,
@@ -427,7 +428,7 @@ var initialize = function ($) {
                 dataType: "json",
                 success: function (ab) {
                     if (ab) {
-                        $("#jfbcchat_user_" + Y + "_popup .jfbcchat_tabcontenttext").html("");
+                        var userYBox = $("#jfbcchat_user_" + Y + "_popup .jfbcchat_tabcontenttext").html("");
                         var Z = "";
                         var mixed = $("#jfbcchat_userlist_" + Y).triggerHandler("getname");
                         $.each(ab, function (ac, ad) {
@@ -439,16 +440,56 @@ var initialize = function ($) {
                                         fromname = mixed
                                     }
                                     ae.message = ae.message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
-                                    Z += ('<div class="jfbcchat_chatboxmessage" id="jfbcchat_message_' + ae.id + '"><span class="jfbcchat_chatboxmessagefrom"><strong>' + fromname + '</strong>:&nbsp;&nbsp;</span><span class="jfbcchat_chatboxmessagecontent">' + ae.message + "</span></div>")
+									var chatBoxId = 'jfbcchat_message_' + ae.id;
+									var chatBoxMsg = $('<div class="jfbcchat_chatboxmessage" id="' + chatBoxId + 
+										'"><span class="jfbcchat_chatboxmessagefrom"><strong>' + fromname + 
+										'</strong>:&nbsp;&nbsp;</span><span class="jfbcchat_chatboxmessagecontent">' + ae.message + 
+										//'(tlumaczenie 1)' + 
+										"</span></div>");
+                                    userYBox.append(chatBoxMsg);
+									var box = $('#' + chatBoxId);
+									var addedTranslation = '.jfbcchat_ycAddedTranslation';
+									if (box.find(addedTranslation).size() == 0)
+									{
+										var msg = box.find('.jfbcchat_chatboxmessagecontent').text();
+										google.language.detect(msg, function(detection) { 
+											debug('lang: ' + detection.language); 
+											if (detection && !detection.error)
+											{
+												google.language.translate(msg, detection.language, 'pl', 
+													function(result) 
+													{ 
+														if (result && !result.error)
+														{
+															box.html(box.html() + fCreateTranslationBox(result.translation));
+														}
+													});
+											}
+										});
+									}
+									else
+									{
+										alert('już tlumaczone ');
+									}
+									//alert('end #' + chatBoxId);
                                 })
                             }
                         });
-                        $("#jfbcchat_user_" + Y + "_popup .jfbcchat_tabcontenttext").append(Z);
-                        $("#jfbcchat_user_" + Y + "_popup .jfbcchat_tabcontenttext").scrollTop($("#jfbcchat_user_" + Y + "_popup .jfbcchat_tabcontenttext")[0].scrollHeight)
+                        userYBox.scrollTop(userYBox[0].scrollHeight);
                     }
                 }
             })
         }
+		
+		function fCreateTranslationBox( content )
+		{
+			var c = [];
+			c.push('<br /><span class="jfbcchat_ycAddedTranslation">');
+			c.push(content);
+			c.push('</span>');
+			return c.join('');
+		}
+
         function listaUtenti(ab, Z, Y, mixed) { 
         	//Nel caso non ci sia uno stato specificato si procede con uno di default preso dal file lingua
         	if (mixed == '')
@@ -495,7 +536,7 @@ var initialize = function ($) {
                 }
                 ac = ac.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
                 if ($("#jfbcchat_message_" + ad).length > 0) {} else {
-                    $("#jfbcchat_user_" + ab + "_popup .jfbcchat_tabcontenttext").append('<div class="jfbcchat_chatboxmessage" id="jfbcchat_message_' + ad + '"><span class="jfbcchat_chatboxmessagefrom"><strong>' + fromname + '</strong>:&nbsp;&nbsp;</span><span class="jfbcchat_chatboxmessagecontent">' + ac + "</span></div>")
+                    $("#jfbcchat_user_" + ab + "_popup .jfbcchat_tabcontenttext").append('<div class="jfbcchat_chatboxmessage" id="jfbcchat_message_' + ad + '"><span class="jfbcchat_chatboxmessagefrom"><strong>' + fromname + '</strong>:&nbsp;&nbsp;</span><span class="jfbcchat_chatboxmessagecontent">' + ac + "(tlumaczenie2)</span></div>")
                 }
                 if (T != ab && ae != 1) {
                     tabAlert(ab, 1, 1)
@@ -901,7 +942,7 @@ var initialize = function ($) {
                                         }
                                         ad.message = ad.message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
                                         if ($("#jfbcchat_message_" + ad.id).length > 0) {} else {
-                                            Y += ('<div class="jfbcchat_chatboxmessage" id="jfbcchat_message_' + ad.id + '"><span class="jfbcchat_chatboxmessagefrom"><strong>' + fromname + '</strong>:&nbsp;&nbsp;</span><span class="jfbcchat_chatboxmessagecontent">' + ad.message + "</span></div>")
+                                            Y += ('<div class="jfbcchat_chatboxmessage" id="jfbcchat_message_' + ad.id + '"><span class="jfbcchat_chatboxmessagefrom"><strong>' + fromname + '</strong>:&nbsp;&nbsp;</span><span class="jfbcchat_chatboxmessagecontent">' + ad.message + "(tlumaczenie 3)</span></div>")
                                             //Observer pattern JQuery, lanciamo un evento custom per arrivo messaggi
                                             if(audio == 1)
                                             	$(msgNotify).trigger("onMessage");
@@ -1137,6 +1178,7 @@ var scroller = function ($) {
 }
 
 jQuery(document).ready(function ($) {
+	var oTranslator = yTranslation();
 	//Chat JQuery Plugin
 	initialize($);
 	//Scroller JQuery Plugin
@@ -1144,6 +1186,7 @@ jQuery(document).ready(function ($) {
 	//Adesso start dell'application
     $.jfbcchat();
     //Sound messageNotifier
-    msgNotify = new messagesNotifier('alert.mp3','clients.mp3'); 
-    msgNotify.registerEvents();
+    //msgNotify = new messagesNotifier('alert.mp3','clients.mp3'); 
+    //msgNotify.registerEvents();
+	
 });
