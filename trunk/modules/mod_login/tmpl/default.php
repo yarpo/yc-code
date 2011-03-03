@@ -93,6 +93,7 @@
 
 	<div id="login-activator">
 		<a class="option" href="javascript:logIn()">zaloguj</a>
+		<a class="option" href="/rejestracja.html">załóż konto</a>
 	</div><!-- #login-activator -->
 	
 	<?php endif; ?>
