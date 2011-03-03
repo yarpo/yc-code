@@ -474,9 +474,9 @@ var initialize = function ($) {
 			var box = $('#' + id);
 			var msg = box.find('.jfbcchat_chatboxmessagecontent').text();
 			google.language.detect(msg, function(detection) { 
-				if (detection && !detection.error && detection.language != 'pl')
+				if (detection && !detection.error && detection.language != fbLikeChatLanguageOut)
 				{
-					google.language.translate(msg, detection.language, 'pl', 
+					google.language.translate(msg, detection.language, fbLikeChatLanguageOut, 
 						function(result) 
 						{ 
 							if (result && !result.error)
