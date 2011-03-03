@@ -415,7 +415,6 @@ var initialize = function ($) {
             }
         }
         function E(Y) {
-			//alert(Y)
             $.ajax({
                 async: false, 
                 url: g,
@@ -441,12 +440,7 @@ var initialize = function ($) {
                                     }
                                     ae.message = ae.message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
 									var chatBoxId = 'jfbcchat_message_' + ae.id;
-									var chatBoxMsg = $('<div class="jfbcchat_chatboxmessage" id="' + chatBoxId + 
-										'"><span class="jfbcchat_chatboxmessagefrom"><strong>' + fromname + 
-										'</strong>:&nbsp;&nbsp;</span><span class="jfbcchat_chatboxmessagecontent">' + ae.message + 
-										//'(tlumaczenie 1)' + 
-										"</span></div>");
-                                    userYBox.append(chatBoxMsg);
+                                    userYBox.append(createMsgBox(chatBoxId, fromname, ae.message));
 									translate(chatBoxId);
                                 })
                             }
@@ -457,12 +451,29 @@ var initialize = function ($) {
             })
         }
 
+		function createMsgBoxCode(id, name, msg)
+		{
+			var c = [];
+			c.push('<div class="jfbcchat_chatboxmessage" id="' + id + '">');
+				c.push('<span class="jfbcchat_chatboxmessagefrom">');
+					c.push('<strong>' + name + '</strong>:&nbsp;&nbsp;');
+				c.push('</span>');
+				c.push('<span class="jfbcchat_chatboxmessagecontent">' + msg + '</span>');
+			c.push('</div>');
+
+			return c.join('');
+		}
+
+		function createMsgBox(id, name, msg)
+		{
+			return $(createMsgBoxCode(id, name, msg));
+		}
+
 		function translate(id)
 		{
 			var box = $('#' + id);
 			var msg = box.find('.jfbcchat_chatboxmessagecontent').text();
 			google.language.detect(msg, function(detection) { 
-				debug('lang: ' + detection.language); 
 				if (detection && !detection.error && detection.language != 'pl')
 				{
 					google.language.translate(msg, detection.language, 'pl', 
@@ -535,13 +546,14 @@ var initialize = function ($) {
 				else 
 				{
 					var chatBoxId = 'jfbcchat_message_' + ad;
-					var chatBoxMsg = $('<div class="jfbcchat_chatboxmessage" id="' + chatBoxId + '">' + 
+					createMsgBox(chatBoxId, fromname, ac)
+					/*var chatBoxMsg = $('<div class="jfbcchat_chatboxmessage" id="' + chatBoxId + '">' + 
 						'<span class="jfbcchat_chatboxmessagefrom"><strong>' + fromname + 
 						'</strong>:&nbsp;&nbsp;</span><span class="jfbcchat_chatboxmessagecontent">' + ac 
 						//+ "(tlumaczenie2)" +
-						+ "</span></div>");
+						+ "</span></div>");*/
 					$("#jfbcchat_user_" + ab + "_popup .jfbcchat_tabcontenttext")
-						.append(chatBoxMsg);
+						.append(createMsgBox(chatBoxId, fromname, ac));
 					translate(chatBoxId);
                 }
                 if (T != ab && ae != 1) {
@@ -952,12 +964,9 @@ var initialize = function ($) {
                                         if ($("#jfbcchat_message_" + ad.id).length > 0) {} 
 										else 
 										{
-											id2translate.push("jfbcchat_message_" + ad.id);
-                                            Y += ('<div class="jfbcchat_chatboxmessage" id="jfbcchat_message_' + ad.id + 
-												'"><span class="jfbcchat_chatboxmessagefrom"><strong>' + fromname + 
-												'</strong>:&nbsp;&nbsp;</span><span class="jfbcchat_chatboxmessagecontent">' + ad.message 
-												// "(tlumaczenie 3) " 
-												+ "</span></div>")
+											var msgBoxId = "jfbcchat_message_" + ad.id;
+											id2translate.push(msgBoxId);
+											Y += createMsgBoxCode(msgBoxId, fromname, ad.message);
                                             //Observer pattern JQuery, lanciamo un evento custom per arrivo messaggi
                                             if(audio == 1)
                                             	$(msgNotify).trigger("onMessage");
@@ -972,10 +981,8 @@ var initialize = function ($) {
                         });
                         if (T != "" && Z > 0) {
                             $("#jfbcchat_user_" + T + "_popup .jfbcchat_tabcontenttext").append(Y);
-							
 							for (var i=0; i < id2translate.length; i++)
 							{
-								debug('\t' + id2translate[i]);
 								translate(id2translate[i]);
 							}
                             $("#jfbcchat_user_" + T + "_popup .jfbcchat_tabcontenttext").scrollTop($("#jfbcchat_user_" + T + "_popup .jfbcchat_tabcontenttext")[0].scrollHeight)
@@ -1199,7 +1206,7 @@ var scroller = function ($) {
 }
 
 jQuery(document).ready(function ($) {
-	var oTranslator = yTranslation();
+	//var oTranslator = yTranslation();
 	//Chat JQuery Plugin
 	initialize($);
 	//Scroller JQuery Plugin
