@@ -8,7 +8,10 @@ var modid;
 	}
 	else
 	{
-		$(document).ready(setupBlogTable);
+		(function($)
+		{
+			$(document).ready(setupBlogTable);
+		})(jQuery);
 	}
 })();
 

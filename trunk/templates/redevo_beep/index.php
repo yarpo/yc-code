@@ -1,27 +1,30 @@
 <?php
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
+$doc = &JFactory::getDocument();
+$doc->addScript("/includes/js/jquery/jquery.js");
+$doc->addScriptDeclaration('var fbLikeChatLanguageOut="' . substr($this->language, 0, 2) . '";');
+$doc->addScriptDeclaration('$ = jQuery;');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 
 <head>
 <jdoc:include type="head" /> <!--head set in the global configuration-->
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template?>/css/menu.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template?>/css/<?php echo $this->params->get("colorVariation", "blue"); ?>.css" type="text/css" />
 
-<?php if(!$this->countModules('user1')||!$this->countModules("user2")){ $topwidth="wide"; }?>
-<?php if(!$this->countModules('user1')&&!$this->countModules("user2")){ $topwidth="wider"; }?>
+<?php if(!$this->countModules('user1')||!$this->countModules('user2')){ $topwidth='wide'; }?>
+<?php if(!$this->countModules('user1')&&!$this->countModules('user2')){ $topwidth='wider'; }?>
 
-<?php if(!$this->countModules("left")){ $middlewidth="wider"; }?>
-<?php if(!$this->countModules("left")&&$this->countModules("right")){ $middlewidth="rightonly"; }?>
-<?php if(!$this->countModules("right")){ $middlewidth="leftonly"; $leftwidth="leftonly"; }?>
-<?php if(!$this->countModules("right")&&!$this->countModules("left")){ $middlewidth="widest"; }?>
+<?php if(!$this->countModules('left')){ $middlewidth='wider'; }?>
+<?php if(!$this->countModules('left')&&$this->countModules('right')){ $middlewidth='rightonly'; }?>
+<?php if(!$this->countModules('right')){ $middlewidth='leftonly'; $leftwidth='leftonly'; }?>
+<?php if(!$this->countModules('right')&&!$this->countModules('left')){ $middlewidth='widest'; }?>
 
-<?php if(!$this->countModules("user5")+!$this->countModules("user6")+!$this->countModules("user7")==1){$bottomwidth="wide"; }?>
-<?php if(!$this->countModules("user5")+!$this->countModules("user6")+!$this->countModules("user7")==2){$bottomwidth="wider";}?>
+<?php if(!$this->countModules('user5')+!$this->countModules('user6')+!$this->countModules('user7')==1){$bottomwidth='wide'; }?>
+<?php if(!$this->countModules('user5')+!$this->countModules('user6')+!$this->countModules('user7')==2){$bottomwidth='wider';}?>
 </head>
 
 <body>
@@ -40,7 +43,6 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		<?php endif; ?>
 
 		</div><!--topright-->
-	
 		<div class="clear"></div>
 	</div><!--topwrap-->
 	
@@ -103,7 +105,6 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 							});
 						</script>
 						<div id="message">
-							
 							<jdoc:include type="message" />
 						</div><!-- #message -->
 						<div id="mainbody">
