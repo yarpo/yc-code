@@ -8,7 +8,6 @@
 var yTranslation = function( setup )
 {
 	setup = setup || {};
-	google.load('language', "1");
 
 	var sMsg;
 
@@ -18,18 +17,16 @@ var yTranslation = function( setup )
 			msgBox           : '.jfbcchat_chatboxmessage',
 			msgContent       : '.jfbcchat_chatboxmessagecontent',
 			addedTranslation : '.jfbcchat_ycAddedTranslation',
-			translationFreq  : setup.frequency || 1000,
 			languageOut      : setup.languageOut || 'en'
 		};
 
 		return c[key] || 'no-such-key';
 	}
 
-	function fProccedAll( frequency )
+	function fProccedAll( box )
 	{
-		window.setTimeout(function() {
-			$(CONST('msgBox')).each(fProceedBox);
-		}, CONST('translationFreq'));
+		//$( box || CONST('msgBox')).each(fProceedBox);
+		console.log('wywoluje');
 	}
 
 	function fCreateTranslationBox( content )
@@ -43,16 +40,27 @@ var yTranslation = function( setup )
 
 	function fProceedBox()
 	{
+		debug('fProceedBox');
 		fProceedTheBox($(this));
 	}
 
 	function fProceedTheBox(box)
 	{
+		alert('fProceedTheBox');
+		return;
+		debug('fProceedTheBox');
 		if (box.find(CONST('addedTranslation')).size() == 0)
 		{
+			debug('fProceedBox, wystapiec ' + box.find(CONST('addedTranslation')).size());
 			var msg = box.find(CONST('msgContent')).text();
-			google.language.detect(msg, function(detLang) { fDetection(detLang, box, msg)});
+			debug('msg: ' + msg);
+			google.language.detect(msg, function(detLang) { debug('lang: ' + detLang); fDetection(detLang, box, msg)});
 		}
+		else
+		{
+			debug('NIE TLUMACZE BO BYLO');
+		}
+		
 	}
 
 	function fDetection(detection, box, msg)
@@ -68,6 +76,7 @@ var yTranslation = function( setup )
 	{
 		if (!result.error)
 		{
+			debug(result.translation);
 			box.html(box.html() + fCreateTranslationBox(result.translation));
 		}
 	}
@@ -78,5 +87,11 @@ var yTranslation = function( setup )
 	};
 };
 
-$(document).ready(yTranslation().proceed);
+function debug(v)
+{
+	if (console && console.log)
+	{
+		console.log(v);
+	}
+}
 
